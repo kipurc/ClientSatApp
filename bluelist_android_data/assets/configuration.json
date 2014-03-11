@@ -1,0 +1,11 @@
+{
+    "applicationID": "<INSERT_APPLICATION_ID_HERE>",
+    "plugins": [
+        {
+            "class": "com.ibm.mobile.services.push.IBMPushService",
+            "parameters": {
+                "gcmSenderId": "<INSERT_SENDER_ID_HERE>"
+            }
+        }
+    ]
+}

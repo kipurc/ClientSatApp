@@ -15,28 +15,51 @@
  */
 package com.ibm.bluelist;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.ibm.mobile.services.core.IBMBaaS;
+import com.ibm.mobile.services.data.IBMDataService;
 
 public final class BlueListApplication extends Application {
 	public static final int EDIT_ACTIVITY_RC = 1;
 	private static final String CLASS_NAME = BlueListApplication.class.getSimpleName();
+	private static final String APP_ID = "applicationID";
+	private static final String BAAS_PROPS_FILE = "baas.properties";
 	List<Item> itemList;
 
 	public BlueListApplication() {
 		registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
 			@Override
-			public void onActivityCreated(Activity activity,Bundle savedInstanceState) {
+			public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
 				Log.d(CLASS_NAME, "Activity created: " + activity.getLocalClassName());
 				//Initialize the SDK
-			    IBMBaaS.initializeSDK(activity);
+				//PPM
+				Properties props = new java.util.Properties();
+				try {
+					AssetManager assetManager = activity.getAssets();					
+					props.load(assetManager.open(BAAS_PROPS_FILE));
+					Log.i(CLASS_NAME, "Found configuration file: " + BAAS_PROPS_FILE);
+				} catch (FileNotFoundException e) {
+					Log.e(CLASS_NAME, "The baas.properties file was not found.", e);
+				} catch (IOException e) {
+					Log.e(CLASS_NAME, "The baas.properties file could not be read properly.", e);
+				}
+				Log.i(CLASS_NAME, "Application ID is: " + props.getProperty(APP_ID));
+				// initialize the IBM core backend-as-a-service
+			    IBMBaaS.initializeSDK(activity, props.getProperty(APP_ID));
+			    // initialize the IBM Data Service
+			    IBMDataService.initializeService();
+			    Item.registerSpecialization(Item.class);
 			}
 			@Override
 			public void onActivityStarted(Activity activity) {
@@ -69,7 +92,7 @@ public final class BlueListApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		itemList = new ArrayList<Item>();
-	    Item.registerSpecialization(Item.class);
+	    //Item.registerSpecialization(Item.class);
 	}
 	
 	/**

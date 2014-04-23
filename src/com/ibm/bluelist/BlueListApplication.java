@@ -42,8 +42,7 @@ public final class BlueListApplication extends Application {
 			@Override
 			public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
 				Log.d(CLASS_NAME, "Activity created: " + activity.getLocalClassName());
-				//Initialize the SDK
-				//PPM
+				// Read from a properties file
 				Properties props = new java.util.Properties();
 				try {
 					AssetManager assetManager = activity.getAssets();					
@@ -59,6 +58,7 @@ public final class BlueListApplication extends Application {
 			    IBMBaaS.initializeSDK(activity, props.getProperty(APP_ID));
 			    // initialize the IBM Data Service
 			    IBMDataService.initializeService();
+			    // register Item data specialization
 			    Item.registerSpecialization(Item.class);
 			}
 			@Override

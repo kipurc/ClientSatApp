@@ -33,7 +33,7 @@ import com.ibm.mobile.services.data.IBMData;
 
 public final class BlueListApplication extends Application {
 	private static final String APP_ID = "applicationID";
-	private static final String BAAS_PROPS_FILE = "baas.properties";
+	private static final String BAAS_PROPS_FILE = "bluelist.properties";
 	public static final int EDIT_ACTIVITY_RC = 1;
 	private static final String CLASS_NAME = BlueListApplication.class
 			.getSimpleName();
@@ -100,10 +100,10 @@ public final class BlueListApplication extends Application {
 			props.load(assetManager.open(BAAS_PROPS_FILE));
 			Log.i(CLASS_NAME, "Found configuration file: " + BAAS_PROPS_FILE);
 		} catch (FileNotFoundException e) {
-			Log.e(CLASS_NAME, "The baas.properties file was not found.", e);
+			Log.e(CLASS_NAME, "The bluelist.properties file was not found.", e);
 		} catch (IOException e) {
 			Log.e(CLASS_NAME,
-					"The baas.properties file could not be read properly.", e);
+					"The bluelist.properties file could not be read properly.", e);
 		}
 		// initialize the IBM core backend-as-a-service
 		IBMBaaS.initializeSDK(this, props.getProperty(APP_ID));

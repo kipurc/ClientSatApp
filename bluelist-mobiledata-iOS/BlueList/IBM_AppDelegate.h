@@ -15,13 +15,9 @@
 //-------------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
-#import "IBM_ListViewController.h"
 
 @interface IBM_AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-// This will be used to refresh the list upon receiving a Push notification
-@property IBM_ListViewController *listViewController;
 
 @end

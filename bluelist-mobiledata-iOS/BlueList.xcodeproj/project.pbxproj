@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FA39EA2518633FB400FB525E /* IBM_Item.m in Sources */ = {isa = PBXBuildFile; fileRef = FA39EA2418633FB400FB525E /* IBM_Item.m */; };
-		FA94280418EF4F5D0013E5D1 /* IBM_CloudCodeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA94280318EF4F5D0013E5D1 /* IBM_CloudCodeDelegate.m */; };
-		FAC0E9C61905C28700627D23 /* IBM_PushDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC0E9C51905C28700627D23 /* IBM_PushDelegate.m */; };
 		FAD04BD71862058500DE0A19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BD61862058500DE0A19 /* Foundation.framework */; };
 		FAD04BD91862058500DE0A19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BD81862058500DE0A19 /* CoreGraphics.framework */; };
 		FAD04BDB1862058500DE0A19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BDA1862058500DE0A19 /* UIKit.framework */; };
@@ -23,7 +21,7 @@
 		FAD04C061862250000DE0A19 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD04C051862250000DE0A19 /* main.storyboard */; };
 		FAD04C0A186233D000DE0A19 /* IBM_ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD04C09186233D000DE0A19 /* IBM_ListViewController.m */; };
 		FAD04C0D1862340500DE0A19 /* IBM_CreateEditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD04C0C1862340500DE0A19 /* IBM_CreateEditItemViewController.m */; };
-		FAFF9DE518F01DC2007EBD9E /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFF9DE418F01DC2007EBD9E /* configuration.plist */; };
+		FAFF9DE318F01A3C007EBD9E /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFF9DE218F01A3C007EBD9E /* configuration.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +37,6 @@
 /* Begin PBXFileReference section */
 		FA39EA2318633FB400FB525E /* IBM_Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBM_Item.h; sourceTree = "<group>"; };
 		FA39EA2418633FB400FB525E /* IBM_Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_Item.m; sourceTree = "<group>"; };
-		FA94280218EF4F5D0013E5D1 /* IBM_CloudCodeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBM_CloudCodeDelegate.h; sourceTree = "<group>"; };
-		FA94280318EF4F5D0013E5D1 /* IBM_CloudCodeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_CloudCodeDelegate.m; sourceTree = "<group>"; };
-		FAC0E9C41905C28700627D23 /* IBM_PushDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBM_PushDelegate.h; sourceTree = "<group>"; };
-		FAC0E9C51905C28700627D23 /* IBM_PushDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_PushDelegate.m; sourceTree = "<group>"; };
 		FAD04BD31862058500DE0A19 /* BlueList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD04BD61862058500DE0A19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FAD04BD81862058500DE0A19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,7 +55,7 @@
 		FAD04C09186233D000DE0A19 /* IBM_ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_ListViewController.m; sourceTree = "<group>"; };
 		FAD04C0B1862340500DE0A19 /* IBM_CreateEditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBM_CreateEditItemViewController.h; sourceTree = "<group>"; };
 		FAD04C0C1862340500DE0A19 /* IBM_CreateEditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_CreateEditItemViewController.m; sourceTree = "<group>"; };
-		FAFF9DE418F01DC2007EBD9E /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
+		FAFF9DE218F01A3C007EBD9E /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,19 +89,6 @@
 				FA39EA2418633FB400FB525E /* IBM_Item.m */,
 			);
 			name = model;
-			sourceTree = "<group>";
-		};
-		FAC0E9C31905C20E00627D23 /* delegates */ = {
-			isa = PBXGroup;
-			children = (
-				FAD04BE51862058500DE0A19 /* IBM_AppDelegate.h */,
-				FAD04BE61862058500DE0A19 /* IBM_AppDelegate.m */,
-				FA94280218EF4F5D0013E5D1 /* IBM_CloudCodeDelegate.h */,
-				FA94280318EF4F5D0013E5D1 /* IBM_CloudCodeDelegate.m */,
-				FAC0E9C41905C28700627D23 /* IBM_PushDelegate.h */,
-				FAC0E9C51905C28700627D23 /* IBM_PushDelegate.m */,
-			);
-			name = delegates;
 			sourceTree = "<group>";
 		};
 		FAD04BCA1862058500DE0A19 = {
@@ -144,8 +125,9 @@
 			children = (
 				FAD04C051862250000DE0A19 /* main.storyboard */,
 				FAD04BE21862058500DE0A19 /* main.m */,
+				FAD04BE51862058500DE0A19 /* IBM_AppDelegate.h */,
+				FAD04BE61862058500DE0A19 /* IBM_AppDelegate.m */,
 				FAD04C071862339F00DE0A19 /* controller */,
-				FAC0E9C31905C20E00627D23 /* delegates */,
 				FA39EA2218633F8900FB525E /* model */,
 				FAD04BE81862058500DE0A19 /* Images.xcassets */,
 				FAD04BDD1862058500DE0A19 /* Supporting Files */,
@@ -156,10 +138,10 @@
 		FAD04BDD1862058500DE0A19 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FAFF9DE418F01DC2007EBD9E /* configuration.plist */,
 				FAD04BDE1862058500DE0A19 /* BlueList-Info.plist */,
 				FAD04BDF1862058500DE0A19 /* InfoPlist.strings */,
 				FAD04BE41862058500DE0A19 /* BlueList-Prefix.pch */,
+				FAFF9DE218F01A3C007EBD9E /* configuration.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -252,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD04BE11862058500DE0A19 /* InfoPlist.strings in Resources */,
-				FAFF9DE518F01DC2007EBD9E /* configuration.plist in Resources */,
+				FAFF9DE318F01A3C007EBD9E /* configuration.plist in Resources */,
 				FAD04C061862250000DE0A19 /* main.storyboard in Resources */,
 				FAD04BE91862058500DE0A19 /* Images.xcassets in Resources */,
 			);
@@ -276,9 +258,7 @@
 				FAD04BE31862058500DE0A19 /* main.m in Sources */,
 				FAD04BE71862058500DE0A19 /* IBM_AppDelegate.m in Sources */,
 				FAD04C0A186233D000DE0A19 /* IBM_ListViewController.m in Sources */,
-				FA94280418EF4F5D0013E5D1 /* IBM_CloudCodeDelegate.m in Sources */,
 				FA39EA2518633FB400FB525E /* IBM_Item.m in Sources */,
-				FAC0E9C61905C28700627D23 /* IBM_PushDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,9 +307,9 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = .;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -344,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lsqlite3",
@@ -370,10 +350,10 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = .;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -381,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-lsqlite3",
 					"-ObjC",
@@ -396,7 +376,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -404,12 +383,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlueList/BlueList-Prefix.pch";
 				INFOPLIST_FILE = "BlueList/BlueList-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
 				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -420,7 +396,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -428,12 +403,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlueList/BlueList-Prefix.pch";
 				INFOPLIST_FILE = "BlueList/BlueList-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
 				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				WRAPPER_EXTENSION = app;
 			};

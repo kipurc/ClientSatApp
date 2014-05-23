@@ -14,18 +14,9 @@
 // limitations under the License.
 //-------------------------------------------------------------------------------
 
-#import "IBM_AppDelegate.h"
 #import <IBMBaaS/IBMBaaS.h>
 #import <IBMData/IBMData.h>
-#import <IBMCloudCode/IBMCloudCode.h>
-#import <IBMPush/IBMPush.h>
-#import "IBM_PushDelegate.h"
-
-@interface IBM_AppDelegate ()
-
-@property IBM_PushDelegate *pushDelegate;
-
-@end
+#import "IBM_AppDelegate.h"
 
 @implementation IBM_AppDelegate
 
@@ -33,12 +24,11 @@
 {
     
     NSString *applicationId = nil;
-    NSString *hostName = nil;
     
     BOOL hasValidConfiguration = YES;
     NSString *errorMessage = @"";
     
-    // Read the applicationId and applicationHostName from the configuration.plist.
+    // Read the applicationId from the configuration.plist.
     NSString *configurationPath = [[NSBundle mainBundle] pathForResource:@"configuration" ofType:@"plist"];
     if(configurationPath){
         NSDictionary *configuration = [[NSDictionary alloc] initWithContentsOfFile:configurationPath];
@@ -47,43 +37,16 @@
             hasValidConfiguration = NO;
             errorMessage = @"Open the configuration.plist and set the applicationId to the BlueMix applicationId";
         }
-
-        hostName = [configuration objectForKey:@"hostName"];
-        if(!hostName || [hostName isEqualToString:@""]){
-            hasValidConfiguration = NO;
-            errorMessage = @"Open the configuration.plist and set the hostName to the BlueMix application name";
-        }
     }
     
     if(hasValidConfiguration){
         // Initialize the SDK and BlueMix services
         [IBMBaaS initializeSDK: applicationId];
         [IBMData initializeService];
-        [IBMCloudCode initializeService:hostName];
-        [IBMPush initializeService];
-        
-        // Register application for push notifications
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     }else{
         [NSException raise:@"InvalidApplicationConfiguration" format: @"%@", errorMessage];
     }
-    
-
     return YES;
-}
-
-#pragma mark - Methods for receiving device registration and notifications
--(void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    self.pushDelegate = [[IBM_PushDelegate alloc]initWithDeviceToken:deviceToken.description];
-    [self.pushDelegate registerDevice];
-}
-
--(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-    // Handle remote Push notification by reloading the list and getting the latest data
-    NSLog(@"Received Push Notification, updating list");
-    [self.listViewController listItems: nil];
 }
 
 @end

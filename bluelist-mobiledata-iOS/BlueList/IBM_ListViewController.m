@@ -14,13 +14,9 @@
 // limitations under the License.
 //-------------------------------------------------------------------------------
 
-#import <IBMBaaS/IBMBaaS.h>
-#import <IBMCloudCode/IBMCloudCode.h>
 #import "IBM_ListViewController.h"
 #import "IBM_CreateEditItemViewController.h"
 #import "IBM_Item.h"
-#import "IBM_AppDelegate.h"
-#import "IBM_CloudCodeDelegate.h"
 
 @interface IBM_ListViewController ()
 
@@ -32,9 +28,6 @@
 
 // If edit was triggered, the cell being edited.
 @property UITableViewCell *editedCell;
-
-@property IBMCloudCode *cloudCodeService;
-@property IBM_CloudCodeDelegate *delegate;
 
 @end
 
@@ -51,14 +44,6 @@
 {
     [super viewDidLoad];
 	self.itemList = [[NSMutableArray alloc]init];
-    
-    // Setting the AppDelegate's connection to this ViewController
-    IBM_AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    [appDelegate setListViewController: self];
-    
-    // Initialize cloud code service
-    self.cloudCodeService = [IBMCloudCode service];
-    self.delegate = [[IBM_CloudCodeDelegate alloc]init];
 
     // Setting up the refresh control
     self.refreshControl = [[UIRefreshControl alloc]init];
@@ -81,7 +66,7 @@
 {
     [self listItems:^{
         [self.refreshControl performSelectorOnMainThread:@selector(endRefreshing) withObject:nil waitUntilDone:NO];
-   }];
+    }];
 }
 
 -(void) reloadLocalTableData
@@ -129,10 +114,7 @@
     [self.itemList addObject: item];
     [self reloadLocalTableData];
     [item saveInBackgroundWithCallback:^(NSError *error, IBM_Item *addedItem) {
-        if(!error){
-            // Invoke cloud code procedure that will update other devices using list app
-            [self.cloudCodeService post:@"notifyOtherDevices" withDelegate: self.delegate withJsonPayload: nil];
-        }else{
+        if(error){
             // Error handing code here
             NSLog(@"createItem failed with error: %@", error);
         }
@@ -143,10 +125,7 @@
 {
     self.editedCell.textLabel.text = item.name;
     [item saveInBackgroundWithCallback:^(NSError *error, IBM_Item *updatedItem) {
-        if(!error){
-            // Invoke cloud code procedure that will update other devices using list app
-            [self.cloudCodeService post:@"notifyOtherDevices" withDelegate: self.delegate withJsonPayload: nil];
-        }else{
+        if(error){
             // Error handing code here
             NSLog(@"updateItem failed with error: %@", error);
         }
@@ -161,9 +140,6 @@
     [item deleteInBackgroundWithCallback:^(NSError *error, id obj) {
         if(!error){
             [self listItems: nil];
-
-            // Invoke cloud code procedure that will update other devices using list app
-            [self.cloudCodeService post:@"notifyOtherDevices" withDelegate: self.delegate withJsonPayload: nil];
         }else{
             // Error handing code here
             NSLog(@"deleteItem failed with error: %@", error);
@@ -214,7 +190,7 @@
     UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
     IBM_CreateEditItemViewController *createEditController = [[navigationController viewControllers] lastObject];
     if(sender == self.addButton){
-        createEditController.item = [[IBM_Item alloc]init];
+        createEditController.item = [[IBM_Item alloc] init];
     }else{
         // is edit so seed the item with the title
         self.editedCell = sender;

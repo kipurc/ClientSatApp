@@ -18,6 +18,4 @@
 
 @interface IBM_ListViewController : UITableViewController 
 
-- (void)listItems: (void(^)(void)) cb;
-
 @end

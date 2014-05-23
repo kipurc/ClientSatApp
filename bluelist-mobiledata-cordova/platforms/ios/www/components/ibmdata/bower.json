@@ -1,0 +1,13 @@
+{
+  "name": "ibmdata",
+  "description": "Mobile Data service SDK for IBM Bluemix",
+  "version": "0.3.2",
+  "main": "./js/IBMData.js",
+  "keywords": [
+    "bluemix"
+  ],
+  "authors": [
+    "IBM"
+  ],
+  "license": "IBM"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "ibmbaas",
+  "description": "Mobile Cloud Services JavaScript SDK for IBM Bluemix",
+  "version": "0.3.2",
+  "codename": "beta3",
+  "author": {
+    "name": [
+      "IBM"
+    ]
+  },
+  "main": "./js/IBMBaaS.js",
+  "repository": {
+    "type": "git",
+    "url": "https://hub.jazz.net/git/mobilec/ibmbaas"
+  },
+  "licenses": [
+    {
+      "type": "IBM"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "request": "~2.34.0"
+  }
+}

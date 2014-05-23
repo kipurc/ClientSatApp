@@ -1,0 +1,13 @@
+{
+  "name": "ibmbaas",
+  "description": "Mobile Cloud Services JavaScript SDK for IBM Bluemix",
+  "version": "0.3.2",
+  "main": "./js/IBMBaaS.js",
+  "keywords": [
+    "bluemix"
+  ],
+  "authors": [
+    "IBM"
+  ],
+  "license": "IBM"
+}

@@ -95,40 +95,44 @@
 - (void)listItems: (void(^)(void)) cb
 {
 	IBMQuery *qry = [IBM_Item query];
-	[qry findObjectsInBackgroundWithBlock:^(NSError *error, NSArray *objects){
-		if (!error) {
-			self.itemList = [NSMutableArray arrayWithArray: objects];
+    [[qry find] continueWithBlock:^id(BFTask *task) {
+        if(task.error) {
+            NSLog(@"listItems failed with error: %@", task.error);
+        } else {
+            self.itemList = [NSMutableArray arrayWithArray: task.result];
             [self reloadLocalTableData];
             if(cb){
                 cb();
             }
-		}else{
-            // Error handing code here
-            NSLog(@"listItems failed with error: %@", error);
+
         }
-	}];
+        return nil;
+        
+    }];
 }
 
 - (void) createItem: (IBM_Item*) item
 {
     [self.itemList addObject: item];
     [self reloadLocalTableData];
-    [item saveInBackgroundWithCallback:^(NSError *error, IBM_Item *addedItem) {
-        if(error){
-            // Error handing code here
-            NSLog(@"createItem failed with error: %@", error);
+    
+    [[item save] continueWithBlock:^id(BFTask *task) {
+        if(task.error) {
+            NSLog(@"createItem failed with error: %@", task.error);
         }
+        return nil;
     }];
+    
 }
 
 - (void) updateItem: (IBM_Item*) item
 {
     self.editedCell.textLabel.text = item.name;
-    [item saveInBackgroundWithCallback:^(NSError *error, IBM_Item *updatedItem) {
-        if(error){
-            // Error handing code here
-            NSLog(@"updateItem failed with error: %@", error);
+    [[item save] continueWithBlock:^id(BFTask *task) {
+        if(task.error) {
+             NSLog(@"updateItem failed with error: %@", task.error);
         }
+        return nil;
     }];
 
 }
@@ -137,13 +141,13 @@
 {
     [self.itemList removeObject: item];
     [self reloadLocalTableData];
-    [item deleteInBackgroundWithCallback:^(NSError *error, id obj) {
-        if(!error){
+    [[item delete] continueWithBlock:^id(BFTask *task) {
+        if(task.error){
+             NSLog(@"deleteItem failed with error: %@", task.error);
+        } else {
             [self listItems: nil];
-        }else{
-            // Error handing code here
-            NSLog(@"deleteItem failed with error: %@", error);
         }
+        return nil;
     }];
     
     // Exit edit mode to avoid need to click Done button

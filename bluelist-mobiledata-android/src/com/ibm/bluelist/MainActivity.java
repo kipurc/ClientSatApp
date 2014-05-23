@@ -38,6 +38,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+import bolts.Continuation;
+import bolts.Task;
 
 import com.ibm.mobile.services.data.IBMDataException;
 import com.ibm.mobile.services.data.IBMDataObject;
@@ -132,8 +134,18 @@ public class MainActivity extends Activity {
 			 * 
 			 * onError is called when an error occurs during the query.
 			 */
-			query.findObjectsInBackground(new IBMQueryResult<Item>() {
-				public void onResult(final List<Item> objects) {
+			query.find().continueWith(new Continuation<List<Item>, Void>() {
+
+				@Override
+				public Void then(Task<List<Item>> task) throws Exception {
+					 // Log error message, if the save task fail.
+					if (task.isFaulted()) {
+						Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
+						return null;
+					}
+					final List<Item> objects = task.getResult();
+					
+					 // If the result succeeds, load the list
 					if (!isFinishing()) {
 						runOnUiThread(new Runnable() {
 							public void run() {
@@ -147,11 +159,10 @@ public class MainActivity extends Activity {
 							}
 						});
 					}
+					return null;
 				}
-				public void onError(IBMDataException error) {
-					Log.e(CLASS_NAME, "Exception : " + error.getMessage());
-				}
-			}); 
+			});
+			
 		}  catch (IBMDataException error) {
 			Log.e(CLASS_NAME, "Exception : " + error.getMessage());
 		}
@@ -192,22 +203,26 @@ public class MainActivity extends Activity {
 			 * onResult is called if the object was successfully saved
 			 * onError is called if an error occurred saving the object 
 			 */
-			item.saveInBackground(new IBMObjectResult<Item>() {
-				/**
-				 * If the result succeeds, onResult gets called with the object that was created.
-				 */
-				public void onResult(Item object) {
+			item.save().continueWith(new Continuation<IBMDataObject, Void>() {
+
+				@Override
+				public Void then(Task<IBMDataObject> task) throws Exception {
+
+					 // Log error message, if the save task fail.
+					if (task.isFaulted()) {
+						Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
+						return null;
+					}
+
+					 // If the result succeeds, load the list
 					if (!isFinishing()) {
 						listItems();
 					}
+					return null;
 				}
-				/**
-				 * If the result failed, onError is called with an exception that describes the error.
-				 */
-				public void onError(IBMDataException error) {
-					Log.e(CLASS_NAME, "Exception : " + error.getMessage());
-				}
+
 			});
+			
 			//set text field back to empty after item added
 			itemToAdd.setText("");
 		}
@@ -220,10 +235,20 @@ public class MainActivity extends Activity {
 	 */
 	public void deleteItem(Item item) {
 		itemList.remove(listItemPosition);
+		
 		//This will attempt to delete the item on the server
-		item.deleteInBackground(new IBMObjectResult<Item>() {
-			//Called if the object was successfully deleted
-			public void onResult(Item item) {
+		item.delete().continueWith(new Continuation<IBMDataObject, Void>() {
+
+			@Override
+			public Void then(Task<IBMDataObject> task) throws Exception {
+
+				 // Log error message, if the delete task fail.
+				if (task.isFaulted()) {
+					Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
+					return null;
+				}
+
+				 // If the result succeeds, reload the list
 				if (!isFinishing()) {
 					runOnUiThread(new Runnable() {
 						public void run() {
@@ -231,13 +256,10 @@ public class MainActivity extends Activity {
 						}
 					});
 				}
-			}
-			//Called if there was an error deleting the item
-			public void onError(IBMDataException error) {
-				Log.e(CLASS_NAME, "Exception : " + error.getMessage());
-				//add error handling here.
+				return null;
 			}
 		});
+		
 		lvArrayAdapter.notifyDataSetChanged();
 	}
 	

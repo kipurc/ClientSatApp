@@ -29,8 +29,11 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+import bolts.Continuation;
+import bolts.Task;
 
 import com.ibm.mobile.services.data.IBMDataException;
+import com.ibm.mobile.services.data.IBMDataObject;
 import com.ibm.mobile.services.data.IBMObjectResult;
 
 public class EditActivity extends Activity {
@@ -92,8 +95,16 @@ public class EditActivity extends Activity {
 		 * onResult is called if the object was successfully saved
 		 * onError is called if an error occurred saving the object 
 		 */
-		item.saveInBackground(new IBMObjectResult<Item>() {
-			public void onResult(Item object) {
+		item.save().continueWith(new Continuation<IBMDataObject, Void>() {
+
+			@Override
+			public Void then(Task<IBMDataObject> task) throws Exception {
+				
+				if (task.isFaulted()) {
+					Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
+					return null;
+				}
+				
 				if (!isFinishing()) {
 					runOnUiThread(new Runnable() {
 						public void run() {
@@ -103,10 +114,11 @@ public class EditActivity extends Activity {
 						}
 					});
 				}
+				
+				return null;
 			}
-			public void onError(IBMDataException error) {
-				Log.e(CLASS_NAME, "Exception : " + error.getMessage());
-			}
+			
 		});
+
 	}
 }

@@ -1,0 +1,22 @@
+{
+  "name": "bluelist-mobileweb",
+  "version": "0.3.2",
+  "authors": [
+    "Matthew Perrins <matthew_perrins@uk.ibm.com>"
+  ],
+  "description": "BlueList Mobile Web",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "bluemix"
+  ],
+  "license": "MIT",
+  "homepage": "bluemix.net",
+  "dependencies": {
+    "ibmbaas": "https://hub.jazz.net/git/mobilec/ibmbaas/.git",
+    "ibmcloudcode": "https://hub.jazz.net/git/mobilec/ibmcloudcode/.git",
+    "angular-touch": "~1.2.16"
+  }
+}

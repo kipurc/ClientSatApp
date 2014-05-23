@@ -1,0 +1,56 @@
+
+<div class="header page-header" style="margin-top:20px;">
+    <h1>Grocery App
+        <small>keep your shopping list in the cloud</small>
+    </h1>
+</div>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Manage your list</div>
+    <div class="panel-body">
+        <p>Add you items into your shopping list and then manage them on the go with your mobile app, mobile web and web</p>
+
+        <div class="input-group glyphicon">
+            <form novalidate role="form" class="form-inline">
+                <button class="btn btn-default" type="submit" ng-click="onAddClick(newItem)">
+                    <span class="glyphicon glyphicon-plus-sign"></span>
+                </button>
+                <div class="form-group">
+                    <label class="sr-only" for="newItem">New Item</label>
+                    <input type="text" class="form-control" id="newItem" ng-model="newItem" placeholder="What do you want to buy?" />
+                </div>
+            </form>
+        </div>
+        <div class="">
+            <div ng-hide="items">
+                <h3>You have no items. Try adding one!</h3>
+            </div>
+            <div class="list-group" ng-show="items">
+                <a ng-repeat="item in items | orderBy:'get().name'" class="nav list-group-item" ng-show="item.get().name">
+                    <div class="animate-switch-container" ng-switch on="item.editing">
+                        <div class="grocery-item animate-switch" ng-switch-default ng-click="onEditClick(item)">
+                            {{item.get("name")}}
+                            <button type="button" class="list-group-item alert-danger text-right" ng-click="onDeleteClick(item);$event.stopPropagation()">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                        <div class="animate-switch" ng-switch-when="true">
+                            <form novalidate role="form" class="form-inline" ng-model="editedItem">
+                                <input class="form-control" ng-model="editedItem.obj.get().name"></input>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" ng-click="onEditDone(editedItem, true)">
+                                        <span class="glyphicon glyphicon-ok-circle"></span>
+                                    </button>
+                                    <button class="btn btn-default" type="button" ng-click="onEditDone(editedItem, false)">
+                                        <span class="glyphicon glyphicon-ban-circle"></span>
+                                    </button>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

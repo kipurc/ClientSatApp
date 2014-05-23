@@ -1,0 +1,5 @@
+{
+  "applicationId" 	: "<APPLICATIONID>",
+  "localhostname" 	: "mbaas",
+  "bluemixhostname" : "<HOSTNAME>"
+}

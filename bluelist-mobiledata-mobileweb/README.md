@@ -1,7 +1,7 @@
-Sample: bluelist-mobileweb
+Sample: bluelist-mobiledata-mobileweb
 ===
 
-The bluelist-mobileweb sample demonstrates how the bluelist app can be hosted and delivered from a Mobile Cloud Code runtime.
+The bluelist-mobiledata-mobileweb sample demonstrates how the BlueList app can be hosted and delivered from a Mobile Cloud Code runtime.
 
 This sample works with the Mobile Backend Starter, an application boilerplate that is available on [Codename: Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
 
@@ -11,18 +11,20 @@ This sample uses the [Ionicframework](https://ionicframework.com) for the mobile
 Downloading this sample
 ---
 
-You can clone this sample from Jazzhub with the following command:
+You can clone the samples from IBM DevOps Services with the following command:
 
-    git clone https://hub.jazz.net/git/mobilecloud/bluelist-mobileweb
+    git clone https://hub.jazz.net/git/mobilecloud/bluelist-mobiledata
+	
+The bluelist-mobiledata-mobileweb code is located in the bluelist-mobiledata/bluelist-mobiledata-mobileweb directory.
 
 
 Running this sample
 ---
-The sample is designed so that it can be easily run locally and then be pushed up to to bluemix and tested in the cloud. Use the following steps to setup the sample. To test the app you need to have created a Mobile Cloud Boilerplate application with [Codename:Bluemix](http://bluemix.net) and you need to make a note of your app of the hostname and the application id.
+The sample is designed so that it can be easily run locally and then be pushed up to to Bluemix and tested in the cloud. Use the following steps to setup the sample. To test the app you need to have created a Mobile Cloud Boilerplate application with [Codename:Bluemix](http://bluemix.net) and you need to make a note of your app of the hostname and the application id.
 
 ### Configuration
 
-To run the app locally you need to first modify the ```public/bluelist.json``` with your corresponding application id and bluemixhostname  , the Bluemix Hostname is the name of the application that you entered when creating the application. It forms the first part of the application url.
+To run the app locally you need to first modify the ```public/bluelist.json``` file with your corresponding application id and bluemixhostname . The Bluemix Hostname is the name of the application that you entered when creating your application on Bluemix. It forms the first part of the application URL.
 
 ```json
 {
@@ -34,7 +36,7 @@ To run the app locally you need to first modify the ```public/bluelist.json``` w
 ```
 
 ### Dependencies
-Modern mobile web applications are now built using dependency managers. The mobile web application sample uses two. It uses ```bower``` for the client side  components and ```npm``` for the server side node.js components. This includes the pulling in of the latest levels of the Mobile Cloud SDKs from [Mobile Cloud SDKs](https://hub.jazz.net/user/mobilec)
+Modern mobile web applications are now built using dependency managers. The mobile web application sample uses two. It uses ```bower``` for the client side  components and ```npm``` for the server side node.js components. This includes the pulling in of the latest levels of the [Mobile Cloud SDKs](https://hub.jazz.net/user/mobilec) .
 
 1. Download and install the node.js runtime from http://nodejs.org/
 2. From the sample app directory install the dependant node modules.
@@ -53,7 +55,7 @@ bower install
 ```bash
 node app
 ```
-6. The sample app can then be accessed using this local url. http://localhost:3000/
+6. The sample app can then be accessed using this local URL: http://localhost:3000/
 7. You should see the mobile web user interface now displayed in your browser.
 
 
@@ -61,7 +63,7 @@ Deploy to Bluemix
 ---
 1. Download and install the Cloud Foundry CLI from https://github.com/cloudfoundry/cli/releases/tag/v6.0.0
 2. From the sample app directory, run ```cf push ${yourAppName}``` to deploy the app to Bluemix.
-3. The sample app can now be tested using your bluemix url
+3. The sample app can now be tested using your Bluemix URL
 
 > Notes.  
  - You can delete and edit items in a list by swiping the list item to the left. This reveals the options `delete` and `edit` options.

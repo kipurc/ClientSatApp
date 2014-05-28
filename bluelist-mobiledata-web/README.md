@@ -1,4 +1,8 @@
-BlueList sample app utlizing IBM's MBaaS Services written using Bootstrap and Angular.
+Sample: bluelist-mobiledata-web
+===
+The bluelist-mobiledata-web sample demonstrates the BlueList sample app utilizing IBM's MBaaS Services written using Bootstrap and Angular.
+
+This sample works with the Mobile Backend Starter, an application boilerplate that is available on [Codename: Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
 
 Prerequisites
 ----
@@ -26,9 +30,9 @@ bower install
 Running Application
 ----
 
-Once the dependencies are brought down, you'll need to update the AppId:
+Once the dependencies are installed, you will need to update the Application Id value.
 
-In **<project_home>/app/scripts/app.js** update the `appId` field under the `MBAAS_CONFIG` constant to match your appId. 
+In **<project_home>/app/scripts/app.js** update the `appId` field under the `MBAAS_CONFIG` constant to match your Bluemix Application Id.
 
 Run the following command to view the application:
 
@@ -40,9 +44,9 @@ grunt serve
 Viewing Code
 ----
 
-This app was scaffolded out using the angular generator for [yeoman](http://yeoman.io/gettingstarted.html). All application contents are in **<project_home>/app**. The javascript source is located in **<project_home>/app/scripts** and the html views are located in **<project_home>/app/views**.
+This app was scaffolded out using the angular generator for [yeoman](http://yeoman.io/gettingstarted.html). All application contents are in **<project_home>/app**. The JavaScript source is located in **<project_home>/app/scripts** and the html views are located in **<project_home>/app/views**.
 
-- **IBMBaaS.js** - This is the core component required for any application using the Mobile Services JavaScript SDK. This provides an `IBMBaaS` object that is used to initalize the SDK with your AppID using IBMBaaS.initializeSDK('<APP_ID'>);
+- **IBMBaaS.js** - This is the core component required for any application using the Mobile Services JavaScript SDK. This provides an `IBMBaaS` object that is used to initialize the SDK with your AppID using IBMBaaS.initializeSDK('<APP_ID'>);
 - **IBMData.js** - This is the Mobile Data module and provides an `IBMData` object that can be used to perform CRUD operations and queries.
     - Creating an object: `IBMData.Object.ofType("Item", {"name": "Apples"}).save()`
     - Query objects of type 'Item':

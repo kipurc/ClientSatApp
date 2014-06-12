@@ -18,3 +18,11 @@ gen/
 # Local configuration file (sdk path, etc)
 local.properties
 
+# Frameworks
+/bluelist-mobiledata-iOS/IBMBluemix.framework/*
+/bluelist-mobiledata-iOS/IBMData.framework/*
+/bluelist-mobiledata-iOS/IBMFileSync.framework/*
+/bluelist-mobiledata-iOS/IBMCloudCode.framework/*
+
+# userdata
+/bluelist-mobiledata-iOS/BlueList.xcodeproj/xcuserdata/*

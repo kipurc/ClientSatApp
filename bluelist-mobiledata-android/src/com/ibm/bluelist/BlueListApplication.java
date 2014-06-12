@@ -28,11 +28,13 @@ import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.ibm.mobile.services.core.IBMBaaS;
+import com.ibm.mobile.services.core.IBMBluemix;
 import com.ibm.mobile.services.data.IBMData;
 
 public final class BlueListApplication extends Application {
 	private static final String APP_ID = "applicationID";
+	private static final String APP_SECRET = "applicationSecret";
+	private static final String APP_ROUTE = "applicationRoute";
 	private static final String PROPS_FILE = "bluelist.properties";
 	public static final int EDIT_ACTIVITY_RC = 1;
 	private static final String CLASS_NAME = BlueListApplication.class
@@ -106,7 +108,7 @@ public final class BlueListApplication extends Application {
 					"The bluelist.properties file could not be read properly.", e);
 		}
 		// initialize the IBM core backend-as-a-service
-		IBMBaaS.initializeSDK(this, props.getProperty(APP_ID));
+		IBMBluemix.initialize(this, props.getProperty(APP_ID), props.getProperty(APP_ROUTE), props.getProperty(APP_SECRET));
 		// initialize the IBM Data Service
 		IBMData.initializeService();
 		// register the Item Specialization

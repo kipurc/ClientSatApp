@@ -3,7 +3,7 @@ Sample: bluelist-mobiledata-mobileweb
 
 The bluelist-mobiledata-mobileweb sample demonstrates how the BlueList app can be hosted and delivered from a Mobile Cloud Code runtime.
 
-This sample works with the Mobile Backend Starter, an application boilerplate that is available on [Codename: Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
+This sample works with the Mobile Backend Starter, an application boilerplate that is available on [IBM Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
 
 This sample uses the [Ionicframework](https://ionicframework.com) for the mobile web user experience and the  [AngularJS](https://angularjs.org/) as the controller framework. The app is hosted inside a Cloud Code Node.js server and loads into a mobile browser or desktop browser. The app then uses the Cloud Code JavaScript SDK to invoke REST services managed in the same Cloud Code runtime. These REST endpoints are managed with [express](http://expressjs.com/). These REST endpoints then map to a set of CRUD (Create, Read, Update and Delete) operations that are then using the JavaScript Data Service SDK to store and manage data into the Mobile Cloud data services that is backed by [Cloudant](https://cloudant.com/).
 

@@ -3,7 +3,7 @@ Sample: bluelist-mobiledata
 
 The bluelist-mobiledata samples build upon the bluelist-base samples, a simple grocery list application.  In bluelist-mobiledata, the items persist to a mobile backend, using the Mobile Data service.
 
-These samples work with the Mobile Cloud, an application boilerplate that is available on [Codename: Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
+These samples work with the Mobile Cloud, an application boilerplate that is available on [IBM Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
 
 
 Downloading the samples

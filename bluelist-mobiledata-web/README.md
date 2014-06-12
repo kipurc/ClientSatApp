@@ -2,7 +2,7 @@ Sample: bluelist-mobiledata-web
 ===
 The bluelist-mobiledata-web sample demonstrates the BlueList sample app utilizing IBM's MBaaS Services written using Bootstrap and Angular.
 
-This sample works with the Mobile Cloud, an application boilerplate that is available on [Codename: Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
+This sample works with the Mobile Cloud, an application boilerplate that is available on [IBM Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
 
 Prerequisites
 ----

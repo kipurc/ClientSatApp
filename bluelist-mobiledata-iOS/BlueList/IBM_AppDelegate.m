@@ -14,7 +14,7 @@
 // limitations under the License.
 //-------------------------------------------------------------------------------
 
-#import <IBMBaaS/IBMBaaS.h>
+#import <IBMBluemix/IBMBluemix.h>
 #import <IBMData/IBMData.h>
 #import "IBM_AppDelegate.h"
 
@@ -24,6 +24,8 @@
 {
     
     NSString *applicationId = nil;
+    NSString *applicationSecret = nil;
+    NSString *applicationRoute = nil;
     
     BOOL hasValidConfiguration = YES;
     NSString *errorMessage = @"";
@@ -37,11 +39,21 @@
             hasValidConfiguration = NO;
             errorMessage = @"Open the configuration.plist and set the applicationId to the BlueMix applicationId";
         }
+        applicationSecret = [configuration objectForKey:@"applicationSecret"];
+        if(!applicationSecret || [applicationSecret isEqualToString:@""]){
+            hasValidConfiguration = NO;
+            errorMessage = @"Open the configuration.plist and set the applicationSecret with your BlueMix application's secret";
+        }
+        applicationRoute = [configuration objectForKey:@"applicationRoute"];
+        if(!applicationRoute || [applicationRoute isEqualToString:@""]){
+            hasValidConfiguration = NO;
+            errorMessage = @"Open the configuration.plist and set the applicationRoute to the BlueMix application's route";
+        }
     }
     
     if(hasValidConfiguration){
         // Initialize the SDK and BlueMix services
-        [IBMBaaS initializeSDK: applicationId];
+        [IBMBluemix initializeWithApplicationId:applicationId andApplicationRoute:applicationRoute andApplicationSecret:applicationSecret];
         [IBMData initializeService];
     }else{
         [NSException raise:@"InvalidApplicationConfiguration" format: @"%@", errorMessage];

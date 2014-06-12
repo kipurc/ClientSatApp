@@ -4,5 +4,9 @@
 <dict>
 	<key>applicationId</key>
 	<string></string>
+	<key>applicationSecret</key>
+	<string></string>
+	<key>applicationRoute</key>
+	<string></string>
 </dict>
 </plist>

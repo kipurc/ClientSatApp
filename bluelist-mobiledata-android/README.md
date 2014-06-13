@@ -13,6 +13,7 @@ You can clone the samples from IBM DevOps Services with the following command:
 
     git clone https://hub.jazz.net/git/mobilecloud/bluelist-mobiledata
 
+The bluelist-mobiledata-android sample will be located within the bluelist-mobiledata directory you just created.
 
 Running this sample (bluelist-mobiledata-android)
 ---

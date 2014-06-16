@@ -21,7 +21,7 @@
 		FAD04C061862250000DE0A19 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD04C051862250000DE0A19 /* main.storyboard */; };
 		FAD04C0A186233D000DE0A19 /* IBM_ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD04C09186233D000DE0A19 /* IBM_ListViewController.m */; };
 		FAD04C0D1862340500DE0A19 /* IBM_CreateEditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD04C0C1862340500DE0A19 /* IBM_CreateEditItemViewController.m */; };
-		FAFF9DE318F01A3C007EBD9E /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFF9DE218F01A3C007EBD9E /* configuration.plist */; };
+		FAFF9DE318F01A3C007EBD9E /* bluelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFF9DE218F01A3C007EBD9E /* bluelist.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		FAD04C09186233D000DE0A19 /* IBM_ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_ListViewController.m; sourceTree = "<group>"; };
 		FAD04C0B1862340500DE0A19 /* IBM_CreateEditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBM_CreateEditItemViewController.h; sourceTree = "<group>"; };
 		FAD04C0C1862340500DE0A19 /* IBM_CreateEditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_CreateEditItemViewController.m; sourceTree = "<group>"; };
-		FAFF9DE218F01A3C007EBD9E /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
+		FAFF9DE218F01A3C007EBD9E /* bluelist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bluelist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97A825B5194F4AF900B637A2 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FAD04BE51862058500DE0A19 /* IBM_AppDelegate.h */,
+				FAD04BE61862058500DE0A19 /* IBM_AppDelegate.m */,
+			);
+			name = delegate;
+			sourceTree = "<group>";
+		};
 		FA39EA2218633F8900FB525E /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +134,8 @@
 			children = (
 				FAD04C051862250000DE0A19 /* main.storyboard */,
 				FAD04BE21862058500DE0A19 /* main.m */,
-				FAD04BE51862058500DE0A19 /* IBM_AppDelegate.h */,
-				FAD04BE61862058500DE0A19 /* IBM_AppDelegate.m */,
 				FAD04C071862339F00DE0A19 /* controller */,
+				97A825B5194F4AF900B637A2 /* delegate */,
 				FA39EA2218633F8900FB525E /* model */,
 				FAD04BE81862058500DE0A19 /* Images.xcassets */,
 				FAD04BDD1862058500DE0A19 /* Supporting Files */,
@@ -141,7 +149,7 @@
 				FAD04BDE1862058500DE0A19 /* BlueList-Info.plist */,
 				FAD04BDF1862058500DE0A19 /* InfoPlist.strings */,
 				FAD04BE41862058500DE0A19 /* BlueList-Prefix.pch */,
-				FAFF9DE218F01A3C007EBD9E /* configuration.plist */,
+				FAFF9DE218F01A3C007EBD9E /* bluelist.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -234,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD04BE11862058500DE0A19 /* InfoPlist.strings in Resources */,
-				FAFF9DE318F01A3C007EBD9E /* configuration.plist in Resources */,
+				FAFF9DE318F01A3C007EBD9E /* bluelist.plist in Resources */,
 				FAD04C061862250000DE0A19 /* main.storyboard in Resources */,
 				FAD04BE91862058500DE0A19 /* Images.xcassets in Resources */,
 			);

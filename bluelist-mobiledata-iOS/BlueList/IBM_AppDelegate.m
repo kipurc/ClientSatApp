@@ -30,24 +30,24 @@
     BOOL hasValidConfiguration = YES;
     NSString *errorMessage = @"";
     
-    // Read the applicationId from the configuration.plist.
-    NSString *configurationPath = [[NSBundle mainBundle] pathForResource:@"configuration" ofType:@"plist"];
+    // Read the applicationId from the bluelist.plist.
+    NSString *configurationPath = [[NSBundle mainBundle] pathForResource:@"bluelist" ofType:@"plist"];
     if(configurationPath){
         NSDictionary *configuration = [[NSDictionary alloc] initWithContentsOfFile:configurationPath];
         applicationId = [configuration objectForKey:@"applicationId"];
         if(!applicationId || [applicationId isEqualToString:@""]){
             hasValidConfiguration = NO;
-            errorMessage = @"Open the configuration.plist and set the applicationId to the BlueMix applicationId";
+            errorMessage = @"Open the bluelist.plist and set the applicationId to the BlueMix applicationId";
         }
         applicationSecret = [configuration objectForKey:@"applicationSecret"];
         if(!applicationSecret || [applicationSecret isEqualToString:@""]){
             hasValidConfiguration = NO;
-            errorMessage = @"Open the configuration.plist and set the applicationSecret with your BlueMix application's secret";
+            errorMessage = @"Open the bluelist.plist and set the applicationSecret with your BlueMix application's secret";
         }
         applicationRoute = [configuration objectForKey:@"applicationRoute"];
         if(!applicationRoute || [applicationRoute isEqualToString:@""]){
             hasValidConfiguration = NO;
-            errorMessage = @"Open the configuration.plist and set the applicationRoute to the BlueMix application's route";
+            errorMessage = @"Open the bluelist.plist and set the applicationRoute to the BlueMix application's route";
         }
     }
     

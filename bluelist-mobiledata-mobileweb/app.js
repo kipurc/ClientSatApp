@@ -30,7 +30,7 @@ var app = require("./public/bluelist.json");
 // initialize the SDK with the Application Id
 IBMBaaS.initializeSDK(app.applicationId);
 
-// initialise the Config (MB. This will be changing)
+// initialize the Config (MB. This will be changing)
 IBMConfig.initializeSDK(app.applicationId);
 
 // initialize the Data SDK 
@@ -54,11 +54,11 @@ app.all('*', function(req, res, next) {
 // Create resource URIs for the mbaas Context Route
 app.namespace(mbaasContextRoot, function() {
 
-    // Define the main GET method for retreiving a full list of items
+    // Define the main GET method for retrieving a full list of items
     app.get('/items', function(req, res) {
 
-        // Retreive a Query instance of type "Item" and issue a find() action on it 
-        // to retreive all the items (NO PAGING)
+        // Retrieve a Query instance of type "Item" and issue a find() action on it 
+        // to retrieve all the items (NO PAGING)
         var query = data.Query.ofType("Item");
         query.find().done(function(items) {
             res.send(items);

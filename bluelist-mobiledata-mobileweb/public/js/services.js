@@ -206,7 +206,7 @@ angular.module('starter.services', [])
             // Lets load the Configuration from the overall package.json    
             $http.get("./bluelist.json").success(function(config) {
 
-                // Initialise the SDK
+                // Initialize the SDK
                 IBMBaaS.initializeSDK(config.applicationId).done(function() {
 
                     // Let the user no they have logged in and can do some stuff if they require
@@ -223,7 +223,7 @@ angular.module('starter.services', [])
 
                     } else {
 
-                        // Ininitalize Cloud Code Service with the Host name of the Application;
+                        // Initialize Cloud Code Service with the Host name of the Application;
                         var cc = IBMCloudCode.initializeService(config.bluemixhostname);
                     }
 

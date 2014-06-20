@@ -108,7 +108,7 @@ public final class BlueListApplication extends Application {
 					"The bluelist.properties file could not be read properly.", e);
 		}
 		// initialize the IBM core backend-as-a-service
-		IBMBluemix.initialize(this, props.getProperty(APP_ID), props.getProperty(APP_ROUTE), props.getProperty(APP_SECRET));
+		IBMBluemix.initialize(this, props.getProperty(APP_ID), props.getProperty(APP_SECRET), props.getProperty(APP_ROUTE));
 		// initialize the IBM Data Service
 		IBMData.initializeService();
 		// register the Item Specialization

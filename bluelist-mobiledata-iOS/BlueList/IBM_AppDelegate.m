@@ -53,7 +53,7 @@
     
     if(hasValidConfiguration){
         // Initialize the SDK and BlueMix services
-        [IBMBluemix initializeWithApplicationId:applicationId andApplicationRoute:applicationRoute andApplicationSecret:applicationSecret];
+        [IBMBluemix initializeWithApplicationId:applicationId andApplicationSecret:applicationSecret andApplicationRoute:applicationRoute];
         [IBMData initializeService];
     }else{
         [NSException raise:@"InvalidApplicationConfiguration" format: @"%@", errorMessage];

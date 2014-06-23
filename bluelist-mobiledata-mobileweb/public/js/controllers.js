@@ -46,7 +46,7 @@ angular.module('starter.controllers', [])
             $scope.list = list;
 
             // Let Angular know we have some data because of the Async nature of IBMBaaS
-            // This is required to make sure the information is uptodate
+            // This is required to make sure the information is up to date
             if (!$scope.$$phase) {
                 $scope.$apply();
             }
@@ -66,7 +66,7 @@ angular.module('starter.controllers', [])
 
     }
 
-    // Init Mobile Cloud SDK and wait for it to configure itself
+    // Initialize Mobile Cloud SDK and wait for it to configure itself
     // Once complete keep a reference to it so we can talk to it later
     if (!$rootScope.IBMBaaS) {
         InitBaaS.init().then(function() {

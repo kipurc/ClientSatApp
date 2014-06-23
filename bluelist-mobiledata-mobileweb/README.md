@@ -20,7 +20,7 @@ The bluelist-mobiledata-mobileweb code is located in the bluelist-mobiledata/blu
 
 Running this sample
 ---
-The sample is designed so that it can be easily run locally and then be pushed up to to Bluemix and tested in the cloud. Use the following steps to setup the sample. To test the app you need to have created a Mobile Cloud Boilerplate application with [Codename:Bluemix](http://bluemix.net) and you need to make a note of your app of the hostname and the application id.
+The sample is designed so that it can be easily run locally and then be pushed up to to Bluemix and tested in the cloud. Use the following steps to setup the sample. To test the app you need to have created a Mobile Cloud Boilerplate application with [IBM Bluemix](http://bluemix.net) and you need to make a note of your app of the hostname and the application id.
 
 ### Configuration
 

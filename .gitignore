@@ -26,3 +26,7 @@ local.properties
 
 # userdata
 /bluelist-mobiledata-iOS/BlueList.xcodeproj/xcuserdata/*
+
+# node and bower 
+node_modules
+/bluelist-mobiledata-mobileweb/public/www/components

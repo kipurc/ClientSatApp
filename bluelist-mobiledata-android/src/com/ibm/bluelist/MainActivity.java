@@ -126,14 +126,7 @@ public class MainActivity extends Activity {
 	public void listItems() {
 		try {
 			IBMQuery<Item> query = IBMQuery.queryForClass(Item.class);
-			/**
-			 * IBMQueryResult is used to receive array of objects from server.
-			 * 
-			 * onResult is called when it successfully retrieves the objects associated with the 
-			 * query, and will reorder these items based on creation time.
-			 * 
-			 * onError is called when an error occurs during the query.
-			 */
+			// Query all the Item objects from the server
 			query.find().continueWith(new Continuation<List<Item>, Void>() {
 
 				@Override
@@ -149,7 +142,8 @@ public class MainActivity extends Activity {
 					if (!isFinishing()) {
 						runOnUiThread(new Runnable() {
 							public void run() {
-								//clear local itemList, as we'll be reordering & repopulating from DataService.
+								//clear local itemList
+								//we'll be reordering and repopulating from DataService
 								itemList.clear();
 								for(IBMDataObject item:objects) {
 									itemList.add((Item) item);
@@ -196,13 +190,7 @@ public class MainActivity extends Activity {
 		Item item = new Item();
 		if (!toAdd.equals("")) {
 			item.setName(toAdd);
-			/**
-			 * IBMObjectResult is used to handle the response from the server after 
-			 * either creating or saving an object.
-			 * 
-			 * onResult is called if the object was successfully saved
-			 * onError is called if an error occurred saving the object 
-			 */
+			// Use the IBMDataObject to create and persist the Item object 
 			item.save().continueWith(new Continuation<IBMDataObject, Void>() {
 
 				@Override

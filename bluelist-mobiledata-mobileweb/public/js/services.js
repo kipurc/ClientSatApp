@@ -207,13 +207,13 @@ angular.module('starter.services', [])
             $http.get("./bluelist.json").success(function(config) {
 
                 // Initialize the SDK
-                IBMBaaS.initializeSDK(config.applicationId).done(function() {
+                IBMBluemix.initialize(config.applicationId).done(function() {
 
                     // Let the user no they have logged in and can do some stuff if they require
-                    console.log("Sucessful initialisation with Application : " + IBMBaaS.getApplicationId());
+                    console.log("Sucessful initialisation with Application : " + IBMBluemix.getApplicationId());
 
                     // Set the Origin to Local 
-                    IBMBaaS.setBaaSURL(window.location.origin);
+                    IBMBluemix.setBaaSURL(window.location.origin);
 
                     // Check if local REMOVE when published
                     if (window.location.origin.indexOf('local') > 0) {

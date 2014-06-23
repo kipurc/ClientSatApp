@@ -15,8 +15,8 @@
   "license": "MIT",
   "homepage": "bluemix.net",
   "dependencies": {
-    "ibmbaas": "https://hub.jazz.net/git/mobilec/ibmbaas/.git",
-    "ibmcloudcode": "https://hub.jazz.net/git/mobilec/ibmcloudcode/.git",
+    "ibmbluemix": "git+https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-javascript#develop",
+    "ibmcloudcode":"git+https://hub.jazz.net/git/bluemixmobilesdk/ibmcloudcode-javascript#develop",
     "angular-touch": "~1.2.16"
   }
 }

@@ -1,5 +1,5 @@
 {
   "applicationId" 	: "<APPLICATIONID>",
-  "localhostname" 	: "mbaas",
-  "bluemixhostname" : "<HOSTNAME>"
+  "applicationSecret": "<APPLICATIONSECRET>",
+  "applicationRoute": "<APPLICATIONROUTE>"
 }

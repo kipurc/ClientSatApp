@@ -207,11 +207,9 @@ angular.module('starter.services', [])
             $http.get("./bluelist.json").success(function(config) {
 
                 // Initialize the SDK
-                IBMBluemix.initialize(config.applicationId).done(function() {
-
+                IBMBluemix.initialize(config).done(function() {
                     // Let the user no they have logged in and can do some stuff if they require
                     console.log("Sucessful initialisation with Application : " + IBMBluemix.getApplicationId());
-
                     // Set the Origin to Local 
                     IBMBluemix.setBaaSURL(window.location.origin);
 

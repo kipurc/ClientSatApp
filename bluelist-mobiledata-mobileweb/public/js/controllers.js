@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
             // Update the model with a list of Items
             $scope.list = list;
 
-            // Let Angular know we have some data because of the Async nature of IBMBaaS
+            // Let Angular know we have some data because of the Async nature of IBMBluemix
             // This is required to make sure the information is up to date
             if (!$scope.$$phase) {
                 $scope.$apply();
@@ -68,9 +68,9 @@ angular.module('starter.controllers', [])
 
     // Initialize Mobile Cloud SDK and wait for it to configure itself
     // Once complete keep a reference to it so we can talk to it later
-    if (!$rootScope.IBMBaaS) {
+    if (!$rootScope.IBMBluemix) {
         InitBaaS.init().then(function() {
-            $rootScope.IBMBaaS = IBMBaaS;
+            $rootScope.IBMBluemix = IBMBluemix;
             $scope.loadItems();
         });
     } else {
@@ -174,9 +174,9 @@ angular.module('starter.controllers', [])
 .controller('AboutCtrl', function($rootScope, $scope) {
 
     // Display information about the Configuration
-    if (typeof IBMBaaS === "object") {
-        $scope.appid = IBMBaaS.getApplicationId();
-        $scope.version = IBMBaaS.getVersion();
+    if (typeof IBMBluemix === "object") {
+        $scope.appid = IBMBluemix.getApplicationId();
+        $scope.version = IBMBluemix.getVersion();
     }
 
 });

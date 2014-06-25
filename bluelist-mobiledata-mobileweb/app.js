@@ -71,7 +71,7 @@ appContext.get('/items', function(req, res) {
 
 	// Retrieve a Query instance of type "Item" and issue a find() action on it 
 	// to retrieve all the items (NO PAGING)
-	var query = data.Query.ofType("Item");
+	var query = req.data.Query.ofType("Item");
 	query.find().done(function(items) {
 		res.send(items);
 	},function(err){
@@ -84,7 +84,7 @@ appContext.get('/items', function(req, res) {
 appContext.get('/item/:id', function(req, res) {
 
 	// Using the Data SDK create a query and pass in a search parameter
-	var query = data.Query.ofType("Item");
+	var query = req.data.Query.ofType("Item");
 	query.find({
 		id: req.params.id
 	}, {
@@ -103,7 +103,7 @@ appContext.get('/item/:id', function(req, res) {
 appContext.post('/item', function(req, res) {
 
 	// Create a new Item instance and then save it to the cloud
-	var item = data.Object.ofType("Item", req.body);
+	var item = req.data.Object.ofType("Item", req.body);
 	item.save().then(function(saved) {
 		res.send(saved);
 	},function(err) {
@@ -116,7 +116,7 @@ appContext.post('/item', function(req, res) {
 // Update an existing Item
 appContext.put('/item/:id', function(req, res) {
 	//Get the object with the given id
-	data.Object.withId(req.params.id)
+	req.data.Object.withId(req.params.id)
 	.then(function(item) {
 		// Update the Contents of the Object
 		item.set(req.body);
@@ -132,9 +132,9 @@ appContext.put('/item/:id', function(req, res) {
 });
 
 // Delete the Item using a unique id
-app.del('/item/:id', function(req, res) {
+app.delete('/item/:id', function(req, res) {
 	//Get the object with the given id so we can delete it
-	data.Object.withId(req.params.id)
+	req.data.Object.withId(req.params.id)
 	.then(function(item) {
 		// Delete the Item from the Cloud 
 		return item.del();

@@ -209,24 +209,22 @@ angular.module('starter.services', [])
                 // Initialize the SDK
                 IBMBluemix.initialize(config).done(function() {
                     // Let the user no they have logged in and can do some stuff if they require
-                    console.log("Sucessful initialisation with Application : " + IBMBluemix.getApplicationId());
+                    console.log("Sucessful initialisation with Application : " + IBMBluemix.config.getApplicationId());
                     // Set the Origin to Local 
-                    IBMBluemix.setBaaSURL(window.location.origin);
-
+                    IBMBluemix.config.setBaaSURL(window.location.origin);
+                    var cc = IBMCloudCode.initializeService();
                     // Check if local REMOVE when published
-                    if (window.location.origin.indexOf('local') > 0) {
+                    // if (window.location.origin.indexOf('local') > 0) {
+                    //     // Set the Host Name to Default
+                    //     var cc = IBMCloudCode.initializeService();
+                    // } else {
 
-                        // Set the Host Name to Default
-                        var cc = IBMCloudCode.initializeService(config.localhostname);
-
-                    } else {
-
-                        // Initialize Cloud Code Service with the Host name of the Application;
-                        var cc = IBMCloudCode.initializeService(config.bluemixhostname);
-                    }
+                    //     // Initialize Cloud Code Service with the Host name of the Application;
+                    //     var cc = IBMCloudCode.initializeService();
+                    // }
 
                     // Let the user no they have logged in and can do some stuff if they require
-                    console.log("Sucessful initialisation Cloud Code: " + cc.getHostName());
+                    // console.log("Sucessful initialisation Cloud Code: " + cc.getHostName());
 
                     // Return the Data
                     defer.resolve();

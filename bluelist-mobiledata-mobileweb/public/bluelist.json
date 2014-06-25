@@ -1,5 +1,5 @@
 {
-  "applicationId" 	: "<APPLICATIONID>",
-  "applicationSecret": "<APPLICATIONSECRET>",
-  "applicationRoute": "<APPLICATIONROUTE>"
+    "applicationId": "141b80c8-d8f7-4082-a115-b6c277f8efe5",
+    "applicationSecret": "25630958c21e88baa793cd3a92fb5f1f2a9de054",
+    "applicationRoute": "drcariel-BlueList.stage1.mybluemix.net"
 }

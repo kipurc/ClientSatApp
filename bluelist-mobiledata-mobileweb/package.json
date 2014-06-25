@@ -9,8 +9,8 @@
     "body-parser": "*",
     "express": "4.*",
     "express-namespace": "*",
-    "ibmdata": "git+https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-javascript#develop",
-    "ibmbluemix": "git+https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-javascript#develop"
+    "ibmdata": "1.0.x",
+    "ibmbluemix": "1.0.x"
   },
   "main": "app.js"
 }

@@ -132,7 +132,7 @@ appContext.put('/item/:id', function(req, res) {
 });
 
 // Delete the Item using a unique id
-app.delete('/item/:id', function(req, res) {
+appContext.delete('/item/:id', function(req, res) {
 	//Get the object with the given id so we can delete it
 	req.data.Object.withId(req.params.id)
 	.then(function(item) {

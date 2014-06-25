@@ -159,7 +159,7 @@ appContext.use('/public',express.static('public'));
 
 //Redirect to the Extending Node.js to use Mobile Cloud Services applications page when accessing the root context
 app.get('/', function(req, res){
-	res.redirect('https://www.bluemix.net/docs/MobileCloud.jsp');
+	res.redirect(contextRoot+"/public");
 });
 
 app.listen(ibmconfig.getPort());

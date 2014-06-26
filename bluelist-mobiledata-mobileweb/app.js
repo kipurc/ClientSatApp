@@ -153,7 +153,6 @@ appContext.delete('/item/:id', function(req, res) {
 
 //host static files in public folder
 //endpoint:  https://mobile.mybluemix.net/${appHostName}/v1/apps/${applicationId}/static/
-//app.use(contextRoot+'/static',express.directory('public'));
 appContext.use('/public',express.static('public'));
 
 

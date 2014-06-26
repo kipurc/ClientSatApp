@@ -24,13 +24,13 @@ The sample is designed so that it can be easily run locally and then be pushed u
 
 ### Configuration
 
-To run the app locally you need to first modify the ```public/bluelist.json``` file with your corresponding application id and bluemixhostname . The Bluemix Hostname is the name of the application that you entered when creating your application on Bluemix. It forms the first part of the application URL.
+To run the app locally you need to first modify the ```public/bluelist.json```  and the app.js file with your corresponding application id, application secret, and application route . The application route is the full application URL that you customized when creating your application on Bluemix.
 
 ```json
 {
   "applicationId"    : "APPLICATIONID",
-  "localhostname"    : "mbaas",
-  "bluemixhostname"  : "HOSTNAME"
+  "applicationSecret"    : "APPLICATIONSECRET",
+  "applicationRoute"  : "URL"
 }
 
 ```

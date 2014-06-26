@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>222D07A6-6079-47D6-95F2-ACF91C46D47A</string>
+	<string>32EAB471-2726-44F9-8C57-6FEEDD5B5CC5</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BlueList</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D47739CA-1845-42F0-AD82-BF77CB81E39B</key>
-		<string>https://hub.jazz.net/git/mobilecloud/bluelist-mobiledata</string>
+		<key>0BF174C1-7ACD-415C-875A-DA9EEEB79F3A</key>
+		<string>https://hub.jazz.net/git/mobilecloud/bluelist-mobiledata/</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>bluelist-mobiledata-iOS/BlueList.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D47739CA-1845-42F0-AD82-BF77CB81E39B</key>
+		<key>0BF174C1-7ACD-415C-875A-DA9EEEB79F3A</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://hub.jazz.net/git/mobilecloud/bluelist-mobiledata</string>
+	<string>https://hub.jazz.net/git/mobilecloud/bluelist-mobiledata/</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D47739CA-1845-42F0-AD82-BF77CB81E39B</string>
+	<string>0BF174C1-7ACD-415C-875A-DA9EEEB79F3A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D47739CA-1845-42F0-AD82-BF77CB81E39B</string>
+			<string>0BF174C1-7ACD-415C-875A-DA9EEEB79F3A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>bluelist-mobiledata</string>
 		</dict>

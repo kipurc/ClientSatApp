@@ -25,9 +25,9 @@ var express = require('express'),
 
 //change this to the actual Application ID of your Bluemix application
 var appConfig = {
-    applicationId: "141b80c8-d8f7-4082-a115-b6c277f8efe5",
-	applicationSecret: "25630958c21e88baa793cd3a92fb5f1f2a9de054",
-    applicationRoute: "drcariel-BlueList.stage1.mybluemix.net"
+    applicationId: "<INSERT_APPLICATION_ID_HERE>",
+	applicationSecret: "<INSERT_APPLICATION_SECRET_HERE>",
+    applicationRoute: "<INSERT_APPLICATION_ROUTE_HERE>"
 };
 
 //initialize the SDK

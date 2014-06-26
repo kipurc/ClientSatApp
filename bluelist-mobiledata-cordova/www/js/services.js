@@ -47,17 +47,6 @@ angular.module('starter.services', [])
             var query = data.Query.ofType("Item");
             query.find().done(function(list) {
 
-                // Add a Name Property
-                list.forEach(function(item) {
-
-                    // As we have called using REST we get raw JSON back so no get and set methods to access attributes
-                    if (angular.isString(item.attributes['name'])) {
-                        item.name = item.attributes.name;
-                    } else {
-                        item.name = '...';
-                    }
-                });
-
                 // Place the Items in the Cache
                 cache.put('items', list);
 
@@ -93,9 +82,6 @@ angular.module('starter.services', [])
             // Create a new Item instance and then save it to the cloud
             var item = data.Object.ofType("Item", {"name":name});
 
-            // Add a top level attribute for displaying in the list
-            item.name = name;
-
             // add the Item to the Cache but we need to replace it when we
             // get a saved copy back
             var items = cache.get('items');
@@ -110,11 +96,8 @@ angular.module('starter.services', [])
             // Save the Class in the Bluemix Cloud
             item.save().then(function(saved) {
 
-                // Update the root date for display
-                saved.name = saved.attributes.name;
-
                 // Replace the Item
-                items.forEach(function(item, i) { if (item.name == saved.name) items[i] = saved;});
+                items.forEach(function(item, i) { if (item.get('name') == saved.get('name')) items[i] = saved;});
                 defer.resolve(saved);
 
             },function(err) {
@@ -126,44 +109,36 @@ angular.module('starter.services', [])
 
         },
 
-        put: function(item,name) {
+        put: function(item) {
 
             // Create a deferred
             var defer = $q.defer();
 
-
             // get the Data Service
             var data = IBMData.getService();
 
-            // Find the Item
-            var find = data.Object.ofType("Item");
-
-            // FIX: Use new API when released
-            // Set the ObjectID in the internal meta data field
-            find._meta.objectId = item._meta.objectId;
-
-            // Read the object
-            find.read().done(function(item) {
+            //Get the object with the given id
+            data.Object.withId(item.getId()).then(function(item) {
 
                 // Create Data to Update
                 var attributes = {
-                    name: name
+                    name: item.get('name')
                 };
 
                 // Update the Contents of the Object
                 item.set(attributes);
 
                 // Save the updated items
-                item.save().then(function(saved) {
-                    defer.resolve(saved);
+                return item.save();
 
-                },function(err){
-                    defer.reject(err);
-                });
+            }).done(function(saved) {
 
-            }, function(err) {
+
+
+                defer.resolve(saved);
+            },function(err){
                 defer.reject(err);
-            });
+            });        
 
             // Return a promise for the async operation of save
             return defer.promise;
@@ -177,33 +152,22 @@ angular.module('starter.services', [])
             // get the Data Service
             var data = IBMData.getService();
 
-            // Find the Item
-            var find = data.Object.ofType("Item");
-
-            // FIX: Use new API when released
-            // Set the ObjectID in the internal meta data field
-            find._meta.objectId = item._meta.objectId;
-
             // Remove the Item from the Cache
             var items = cache.get('items');
             items.splice(items.indexOf(item), 1)
 
-            // Read the object
-            find.read().done(function(item) {
-
-                // Delete the Item from the Cloud
-                item.del().done(function(deleted) {
-                    // Validated it was deleted
-                    var isDeleted = deleted.isDeleted();
-                    if (deleted.isDeleted()) {
-                        defer.resolve(deleted);
-                    } else {
-                        defer.reject(err);
-                    }
-                });
-
-            }, function(err) {
-                defer.reject(err);
+            //Get the object with the given id so we can delete it
+            data.Object.withId(item.getId()).then(function(item) {
+                // Delete the Item from the Cloud 
+                return item.del();
+            }).done(function(deleted) {
+                // Validated it was deleted
+                var isDeleted = deleted.isDeleted();
+                if (deleted.isDeleted()) {
+                    defer.resolve(deleted);
+                } else {
+                    defer.reject(err);
+                }
             });
 
             // Remove it
@@ -217,7 +181,7 @@ angular.module('starter.services', [])
 /**
  * A Service that intialises MBaaS
  */
-.factory('InitBaaS',
+.factory('InitBluemix',
     function($rootScope, $http, $q) {
 
         function init() {
@@ -229,10 +193,10 @@ angular.module('starter.services', [])
             $http.get("./bluelist.json").success(function(config) {
 
                 // Initialise the SDK
-                IBMBaaS.initializeSDK(config.applicationId).done(function() {
+                IBMBluemix.initialize(config).done(function() {
 
                     // Let the user no they have logged in and can do some stuff if they require
-                    console.log("Sucessful initialisation with Application : " + IBMBaaS.getApplicationId());
+                    console.log("Sucessful initialisation with Application : " + IBMBluemix.getConfig().getApplicationId());
 
                     // Initialize the Service
                     var data = IBMData.initializeService();

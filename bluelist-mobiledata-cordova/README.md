@@ -16,8 +16,6 @@ You can clone the samples from IBM DevOps Services with the following command:
 	
 The bluelist-mobiledata-cordova code is located in the bluelist-mobiledata/bluelist-mobiledata-cordova directory.
 	
-
-
 Prerequisite's
 ---
 Before you can run the sample you need to install the prerequisite software components.
@@ -56,7 +54,9 @@ To run the app locally you need to first modify the ```www/bluelist.json``` file
 
 ```json
 {
-  "applicationId"    : "APPLICATIONID"
+    "applicationId": "<INSERT_APPLICATION_ID_HERE>",
+    "applicationSecret": "<INSERT_APPLICATION_SECRET_HERE>",
+    "applicationRoute": "<INSERT_APPLICATION_ROUTE_HERE>"
 }
 
 ```

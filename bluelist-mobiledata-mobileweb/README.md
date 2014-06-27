@@ -28,9 +28,9 @@ To run the app locally you need to first modify the ```public/bluelist.json```  
 
 ```json
 {
-  "applicationId"    : "APPLICATIONID",
-  "applicationSecret"    : "APPLICATIONSECRET",
-  "applicationRoute"  : "URL"
+	"applicationId": "<INSERT_APPLICATION_ID_HERE>",
+	"applicationSecret": "<INSERT_APPLICATION_SECRET_HERE>",
+    "applicationRoute": "<INSERT_APPLICATION_ROUTE_HERE>"
 }
 
 ```

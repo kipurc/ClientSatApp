@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		973E6498195DB28A00A89E13 /* IBMBluemix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973E6496195DB28A00A89E13 /* IBMBluemix.framework */; };
+		973E6499195DB28A00A89E13 /* IBMData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973E6497195DB28A00A89E13 /* IBMData.framework */; };
 		FA39EA2518633FB400FB525E /* IBM_Item.m in Sources */ = {isa = PBXBuildFile; fileRef = FA39EA2418633FB400FB525E /* IBM_Item.m */; };
 		FAD04BD71862058500DE0A19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BD61862058500DE0A19 /* Foundation.framework */; };
 		FAD04BD91862058500DE0A19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BD81862058500DE0A19 /* CoreGraphics.framework */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		973E6496195DB28A00A89E13 /* IBMBluemix.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IBMBluemix.framework; sourceTree = "<group>"; };
+		973E6497195DB28A00A89E13 /* IBMData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IBMData.framework; sourceTree = "<group>"; };
 		FA39EA2318633FB400FB525E /* IBM_Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBM_Item.h; sourceTree = "<group>"; };
 		FA39EA2418633FB400FB525E /* IBM_Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_Item.m; sourceTree = "<group>"; };
 		FAD04BD31862058500DE0A19 /* BlueList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +69,9 @@
 			files = (
 				FAD04BD91862058500DE0A19 /* CoreGraphics.framework in Frameworks */,
 				FAD04BDB1862058500DE0A19 /* UIKit.framework in Frameworks */,
+				973E6498195DB28A00A89E13 /* IBMBluemix.framework in Frameworks */,
 				FAD04BD71862058500DE0A19 /* Foundation.framework in Frameworks */,
+				973E6499195DB28A00A89E13 /* IBMData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +127,8 @@
 		FAD04BD51862058500DE0A19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				973E6496195DB28A00A89E13 /* IBMBluemix.framework */,
+				973E6497195DB28A00A89E13 /* IBMData.framework */,
 				FAD04BD61862058500DE0A19 /* Foundation.framework */,
 				FAD04BD81862058500DE0A19 /* CoreGraphics.framework */,
 				FAD04BDA1862058500DE0A19 /* UIKit.framework */,

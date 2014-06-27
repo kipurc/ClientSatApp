@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>applicationId</key>
-	<string></string>
+	<string>b27c4f2d-e4fe-4073-bc6f-2027350d0591</string>
 	<key>applicationSecret</key>
-	<string></string>
+	<string>a30416ec82315c5357e0464c9dfc40fb9513e749</string>
 	<key>applicationRoute</key>
-	<string></string>
+	<string>newBelindaApp.mybluemix.net</string>
 </dict>
 </plist>

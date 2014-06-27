@@ -1,6 +1,6 @@
 {
   "name": "bluelist-cordova",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Bluelist Cordova",
   "dependencies": {
     "gulp": "^3.5.6",

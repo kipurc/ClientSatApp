@@ -17,13 +17,13 @@
 angular.module('starter.controllers', [])
 
 // A simple controller that fetches a list of data from a service
-.controller('ListIndexCtrl', function($rootScope, $scope, $location, $ionicLoading, $ionicModal, ListService, InitBaaS) {
+.controller('ListIndexCtrl', function($rootScope, $scope, $location, $ionicLoading, $ionicModal, ListService, InitBluemix) {
 
     // Form Model
     $scope.item = {};
 
     // Default Error message 
-    $scope.error = "Could not retrieve the list itmes from the cloud";
+    $scope.error = "Could not retrieve the list items from the cloud";
 
     $scope.loadItems = function() {
 
@@ -71,9 +71,9 @@ angular.module('starter.controllers', [])
 
     // Init Mobile Cloud SDK and wait for it to configure itself
     // Once complete keep a reference to it so we can talk to it later
-    if (!$rootScope.IBMBaaS) {
-        InitBaaS.init().then(function() {
-            $rootScope.IBMBaaS = IBMBaaS;
+    if (!$rootScope.IBMBluemix) {
+        InitBluemix.init().then(function() {
+            $rootScope.IBMBluemix = IBMBluemix;
             $scope.loadItems();
         });
     } else {
@@ -94,7 +94,9 @@ angular.module('starter.controllers', [])
 
     // Create our modal
     $ionicModal.fromTemplateUrl('templates/list-add.html', function(modal) {
+
         $scope.itemModal = modal;
+
     }, {
         scope: $scope,
         animation: 'slide-in-up',
@@ -104,7 +106,7 @@ angular.module('starter.controllers', [])
     $scope.createItem = function(item) {
 
         // Add the Item and then hide the modal view
-        ListService.add(item.name).then(null, function(err) {
+        ListService.add(item.attributes.name).then(null, function(err) {
 
             $scope.closeItem();
             $scope.error = "Could not add item to the cloud";
@@ -121,10 +123,10 @@ angular.module('starter.controllers', [])
 
     };
 
-    $scope.updateItem = function(item) {
+    $scope.updateItem = function(/*Object*/item) {
 
         // Add the Item and then hide the modal view
-        ListService.put(item,item.name).then(null, function(err) {
+        ListService.put(item).then(null, function(err) {
             $scope.closeItem();
             console.log(err);
             $scope.error = "Could not update the item";
@@ -139,9 +141,9 @@ angular.module('starter.controllers', [])
     };
 
     $scope.newItem = function() {
-        // Clear the Form
-        $scope.item.name = '';
 
+        // Clear the Form
+        $scope.item = {attributes:{name:''}};
         $scope.editMode = false;
 
         //      $(".view").hide();
@@ -184,9 +186,12 @@ angular.module('starter.controllers', [])
 .controller('AboutCtrl', function($rootScope, $scope) {
 
     // Display information about the Configuration
-    if (typeof IBMBaaS === "object") {
-        $scope.appid = IBMBaaS.getApplicationId();
-        $scope.version = IBMBaaS.getVersion();
+    if (typeof IBMBluemix === "object") {
+        $scope.appid = IBMBluemix.getConfig().getApplicationId();
+        $scope.version = IBMBluemix.getVersion();
+        $scope.secret = IBMBluemix.config.applicationSecret;
+        $scope.route = IBMBluemix.config.applicationRoute;
+
     }
 
 });

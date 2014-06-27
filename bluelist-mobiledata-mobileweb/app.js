@@ -26,6 +26,7 @@ var express = require('express'),
 //change this to the actual Application ID of your Bluemix application
 var appConfig = {
     "applicationId": "<INSERT_APPLICATION_ID_HERE>",
+	"applicationSecret": "<INSERT_APPLICATION_SECRET_HERE>",
     "applicationRoute": "<INSERT_APPLICATION_ROUTE_HERE>"
 };
 

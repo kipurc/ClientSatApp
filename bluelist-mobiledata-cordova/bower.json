@@ -18,8 +18,8 @@
     "angular": "~1.2.16",
     "angular-touch": "~1.2.16",
     "angular-sanitize": "~1.2.16",
-    "ibmdata": "https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-javascript/.git",
-    "ibmbluemix": "https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-javascript/.git"
+    "ibmdata": "git+https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-javascript",
+    "ibmbluemix": "git+https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-javascript"
 
   }
 }

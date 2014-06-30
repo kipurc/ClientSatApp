@@ -23,12 +23,9 @@ var express = require('express'),
     ibmdata = require('ibmdata'),
 	bodyparser = require('body-parser');
 
-//change this to the actual Application ID of your Bluemix application
-var appConfig = {
-    "applicationId": "<INSERT_APPLICATION_ID_HERE>",
-	"applicationSecret": "<INSERT_APPLICATION_SECRET_HERE>",
-    "applicationRoute": "<INSERT_APPLICATION_ROUTE_HERE>"
-};
+//extract application data from bluelist.json
+var fs = require('fs');
+var appConfig = JSON.parse(fs.readFileSync('public/bluelist.json', 'utf8'));
 
 //initialize the SDK
 ibmbluemix.initialize(appConfig); 

@@ -24,7 +24,7 @@ The sample is designed so that it can be easily run locally and then be pushed u
 
 ### Configuration
 
-To run the app locally you need to first modify the ```public/bluelist.json```  and the ```app.js``` file with your corresponding application id, application secret, and application route . The application route is the full application URL that you customized when creating your application on Bluemix.
+To run the app locally you need to first modify the ```public/bluelist.json``` file with your corresponding application id, application secret, and application route . The application route is the full application URL that you customized when creating your application on Bluemix.
 
 ```json
 {

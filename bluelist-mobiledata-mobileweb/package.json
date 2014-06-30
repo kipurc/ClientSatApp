@@ -9,8 +9,8 @@
     "body-parser": "*",
     "express": "4.*",
     "express-namespace": "*",
-    "ibmdata": "1.0.x",
-    "ibmbluemix": "1.0.x"
+    "ibmdata": "~1.0.0",
+    "ibmbluemix": "~1.0.0"
   },
   "main": "app.js"
 }

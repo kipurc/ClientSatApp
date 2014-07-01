@@ -3,7 +3,7 @@ Sample: bluelist-mobiledata-cordova
 
 The bluelist-mobiledata-cordova sample demonstrates how the BlueList app can be written using the hybrid development approach, building the user experience with HTML5, CSS3 technologies and running them inside a Cordova application shim.
 
-This sample works with the Mobile Cloud, an application boilerplate that is available on [Codename: Bluemix](https://www.ng.bluemix.net). With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
+This sample works with the Mobile Cloud, an application boilerplate that is available on [IBM Bluemix](https://www.ng.bluemix.net). With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
 
 This sample uses [Cordova](http://cordova.apache.org/) to manage the native Mobile experience. Within Cordova, the [Ionicframework](https://ionicframework.com) is used for the mobile user experience and the  [AngularJS](https://angularjs.org/) as the controller framework. The app uses the Mobile Cloud Data Service SDK for JavaScript to manage the CRUD (Create, Read, Update and Delete) operations. This enable the storage of data in the cloud and that is backed by  [Cloudant](https://cloudant.com/).
 
@@ -46,7 +46,7 @@ To help with your setup we strongly recommend working through the following Plat
 * [Cordova Getting Started Guide for IOS](http://cordova.apache.org/docs/en/3.3.0/guide_platforms_ios_index.md.html#iOS%20Platform%20Guide)
 * [Cordova Getting Started Guide for Android](http://cordova.apache.org/docs/en/3.3.0/guide_platforms_android_index.md.html#Android%20Platform%20Guide)
 
-To test the app you need to have created a Mobile Cloud Boilerplate application with [Codename:Bluemix](http://bluemix.net) and you need to make a note of your application id.
+To test the app you need to have created a Mobile Cloud Boilerplate application with [IBM Bluemix](http://bluemix.net) and you need to make a note of your application id.
 
 ### Configuration
 

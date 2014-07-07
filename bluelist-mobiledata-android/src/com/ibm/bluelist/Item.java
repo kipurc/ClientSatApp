@@ -24,7 +24,7 @@ public class Item extends IBMDataObject {
 	private static final String NAME = "name";
 	
 	/**
-	 * gets the name of the Item.
+	 * Gets the name of the Item.
 	 * @return String itemName
 	 */
 	public String getName() {
@@ -32,7 +32,7 @@ public class Item extends IBMDataObject {
 	}
 
 	/**
-	 * sets the name of a list item, as well as calls setCreationTime()
+	 * Sets the name of a list item, as well as calls setCreationTime().
 	 * @param String itemName
 	 */
 	public void setName(String itemName) {
@@ -40,7 +40,7 @@ public class Item extends IBMDataObject {
 	}
 	
 	/**
-	 * when calling toString() for an item, we'd really only want the name.
+	 * When calling toString() for an item, we'd really only want the name.
 	 * @return String theItemName
 	 */
 	public String toString() {

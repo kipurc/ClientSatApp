@@ -68,34 +68,34 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		/* Use application class to maintain global state*/
+		/* Use application class to maintain global state. */
 		blApplication = (BlueListApplication) getApplication();
 		itemList = blApplication.getItemList();
 		
-		/* Set up the array adapter for items list view*/
+		/* Set up the array adapter for items list view. */
 		ListView itemsLV = (ListView)findViewById(R.id.itemsList);
 		lvArrayAdapter = new ArrayAdapter<Item>(this, R.layout.list_item_1, itemList);
 		itemsLV.setAdapter(lvArrayAdapter);
 		
-		/* Refresh the list*/
+		/* Refresh the list. */
 		listItems(); 
 
-		/* Set long click listener*/
+		/* Set long click listener. */
 		itemsLV.setOnItemLongClickListener(new OnItemLongClickListener() {
-		    /* Called when the user long clicks on the textview in the list*/
+		    /* Called when the user long clicks on the textview in the list. */
 		    public boolean onItemLongClick(AdapterView<?> adapter, View view, int position,
 	                long rowId) {
 		    	listItemPosition = position;
 				if (mActionMode != null) {
 		            return false;
 		        }
-		        /* Start the contextual action bar using the ActionMode.Callback*/
+		        /* Start the contextual action bar using the ActionMode.Callback. */
 		        mActionMode = MainActivity.this.startActionMode(mActionModeCallback);
 		        return true;
 		    }
 		});
 		EditText itemToAdd = (EditText) findViewById(R.id.itemToAdd);
-		/* Set key listener for edittext (done key to accept item to list)*/
+		/* Set key listener for edittext (done key to accept item to list). */
 		itemToAdd.setOnEditorActionListener(new OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -126,12 +126,12 @@ public class MainActivity extends Activity {
 	public void listItems() {
 		try {
 			IBMQuery<Item> query = IBMQuery.queryForClass(Item.class);
-			// Query all the Item objects from the server
+			// Query all the Item objects from the server.
 			query.find().continueWith(new Continuation<List<Item>, Void>() {
 
 				@Override
 				public Void then(Task<List<Item>> task) throws Exception {
-					 // Log error message, if the save task fail.
+					 // Log error message, if the save task fails.
 					if (task.isFaulted()) {
 						Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
 						return null;
@@ -171,7 +171,7 @@ public class MainActivity extends Activity {
     {
 		switch (resultCode)
 		{
-		/* If an edit has been made, notify that the data set has changed.*/
+		/* If an edit has been made, notify that the data set has changed. */
 		case BlueListApplication.EDIT_ACTIVITY_RC:
 			sortItems(itemList);
 			lvArrayAdapter.notifyDataSetChanged();
@@ -191,19 +191,19 @@ public class MainActivity extends Activity {
 		Item item = new Item();
 		if (!toAdd.equals("")) {
 			item.setName(toAdd);
-			// Use the IBMDataObject to create and persist the Item object 
+			// Use the IBMDataObject to create and persist the Item object.
 			item.save().continueWith(new Continuation<IBMDataObject, Void>() {
 
 				@Override
 				public Void then(Task<IBMDataObject> task) throws Exception {
 
-					 // Log error message, if the save task fail.
+					 // Log error message, if the save task fails.
 					if (task.isFaulted()) {
 						Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
 						return null;
 					}
 
-					 // If the result succeeds, load the list
+					 // If the result succeeds, load the list.
 					if (!isFinishing()) {
 						listItems();
 					}
@@ -212,7 +212,7 @@ public class MainActivity extends Activity {
 
 			});
 			
-			// Set text field back to empty after item added.
+			// Set text field back to empty after item is added.
 			itemToAdd.setText("");
 		}
 	}
@@ -231,7 +231,7 @@ public class MainActivity extends Activity {
 			@Override
 			public Void then(Task<IBMDataObject> task) throws Exception {
 
-				 // Log error message, if the delete task fail.
+				 // Log error message, if the delete task fails.
 				if (task.isFaulted()) {
 					Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
 					return null;
@@ -281,7 +281,7 @@ public class MainActivity extends Activity {
 	
 	private ActionMode.Callback mActionModeCallback = new ActionMode.Callback() {
 	    public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-	        /* Inflate a menu resource with context menu items*/
+	        /* Inflate a menu resource with context menu items. */
 	        MenuInflater inflater = mode.getMenuInflater();
 	        inflater.inflate(R.menu.editaction, menu);
 	        return true;
@@ -300,23 +300,23 @@ public class MainActivity extends Activity {
 		 */
 	    public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
 	    	Item lItem = itemList.get(listItemPosition);
-	    	/* Switch dependent on which action item was clicked*/
+	    	/* Switch dependent on which action item was clicked. */
 	    	switch (item.getItemId()) {
-	    		/* On edit, get all info needed & send to new, edit activity.*/
+	    		/* On edit, get all info needed & send to new, edit activity. */
 	            case R.id.action_edit:
 	            	updateItem(lItem.getName());
-	                mode.finish(); /* Action picked, so close the CAB*/
+	                mode.finish(); /* Action picked, so close the CAB. */
 	                return true;
-	            /* On delete, remove list item & update.*/
+	            /* On delete, remove list item & update. */
 	            case R.id.action_delete:
 	            	deleteItem(lItem);
-	                mode.finish(); /* Action picked, so close the CAB*/
+	                mode.finish(); /* Action picked, so close the CAB. */
 	            default:
 	                return false;
 	        }
 	    }
 
-	    /* Called on exit of action mode*/
+	    /* Called on exit of action mode. */
 	    public void onDestroyActionMode(ActionMode mode) {
 	        mActionMode = null;
 	    }

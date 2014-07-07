@@ -1,141 +1,112 @@
-Mobile Data service SDK for IBM Bluemix
+Mobile Cloud Services Data JavaScript SDK for IBM Bluemix
 ===
 
-BlueMix supports IBM's MobileFirst strategy by allowing you as a mobile developer to quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
+This package contains the required native components to interact with the IBM
+Bluemix Mobile Cloud Services.  This JavaScript SDK can be used for building Web 
+or Hybrid applications.  It can also be used inside server-side [Node.js](http://nodejs.org) 
+JavaScript modules. The SDK manages all the communication and security integration between 
+the client and with the Mobile Cloud Services in Bluemix.
 
-When you create a Mobile Cloud Starter application, BlueMix provisions multiple services under a single application context. Your mobile application is given access to the following mobile services: Mobile Application Security, Push, and Mobile Data.
+When you use Bluemix to create a Mobile Cloud Starter application, BlueMix provisions 
+multiple services under a single application context. Your mobile application is given 
+access to the following mobile services: Mobile Application Security, Push, and Mobile Data.
 
-About
----
+Version: v1.0.0+20140626-1346
 
-The Data Service SDK is a JavaScript SDK you can use inside a Web or Hybrid application.  You can also use the SDK inside a server-side [Node.js](http://nodejs.org) JavaScript module. The SDK manages all the communication and security integration with the Mobile Cloud Services in Bluemix.
-
-## Download
+##Installation
+The SDK may be installed either by downloading a [zip file](https://mbaas-catalog.ng.bluemix.net/sdk/ibm-bluemix-sdk-javascript.zip),
+or by installing the desired components using [Bower](http://bower.io), or [NPM](https://www.npmjs.org/).
+Using either of these tools can significantly shorten the startup time for new
+projects and lessen the burden of managing library version requirements
+as well as the dependencies between them.  If you
+are using one of our [samples](https://hub.jazz.net/user/mobilecloud),
+instructions for using the package manager is included with the documentation.
 
 ### Node.js
+
+NPM is included in current node.js distributions.  To install node.js, you may
+download the code here: http://nodejs.org/download/.  
 
 Install the `ibmdata` package with the [`npm`](https://www.npmjs.org/) package manager , this will require [`node.js`](http://nodejs.org/download/) to be installed first.
 
 Use the following command to install the SDK:
 
-```bsd
+```bash
 npm install ibmdata
 ```
 
 ### Web or Hybrid
 
-Install the `ibmdata` package with the [`bower`](http://bower.io/) package manager with the following command:
+To install Bower, please see the installation section at this link: 
+http://bower.io/.  
+
+Using the [`bower`](http://bower.io/) package manager, install the `ibmdata` package with the following command:
 
 ```
-bower install https://hub.jazz.net/git/mobilec/ibmdata/.git
+bower install https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-javascript/.git
 ```
 
-## Loading
+###Download
 
-After the SDK is installed, you can use the SDK within your app.
+To download a zip of the entire SDK, visit the Mobile Cloud [starter page](https://www.ng.bluemix.net/docs/#starters/mobile/index.html#index).
 
-### Node.js
+###Contents
+
+The complete SDK consists of a core, plus a collection of modules that correspond to function exposed
+by the Mobile Cloud Services.  The downloaded zip file
+contains all of them. However, each piece of the JavaScript SDK is also available as a separate module
+that you can add to your project individually. This allows maximum flexibility, as the developer is able to 
+pick and choose the modules required for a given application. 
+
+The JavaScript SDK contains the following components, any of which may be added to your project.
+
+- **[ibmbluemix](https://hub.jazz.net/project/bluemixmobilesdk/ibmbluemix-javascript/overview)** - This is the foundation of the SDK and controls connection and communication with Backend services
+- **[ibmpush](https://hub.jazz.net/project/bluemixmobilesdk/ibmpush-javascript/overview)** - This is the service SDK for push notification support
+- **[ibmdata](https://hub.jazz.net/project/bluemixmobilesdk/ibmdata-javascript/overview)** - This is the service SDK for cloud data storage
+- **[ibmfilesync](https://hub.jazz.net/project/bluemixmobilesdk/ibmfilesync-javascript/overview)** - This is the service SDK for cloud file storage
+- **[ibmcloudcode](https://hub.jazz.net/project/bluemixmobilesdk/ibmcloudcode-javascript/overview)** - This is the service SDK for cloud code invocation
+- **[ibmlocation](https://hub.jazz.net/project/bluemixmobilesdk/ibmlocation-javascript/overview)** - This is the service SDK for the Beta level mobile location services
+- **docs/** - This directory contains the documentation for the SDK
+
+##Getting Started:
+
+Services are associated with a Mobile Cloud application. Connectivity and interaction with
+these services depends on the application id, application secret, and application route associated
+with a Mobile Cloud Application.
+
+The Data Service SDK is a JavaScript SDK you can use inside a 
+Web or Hybrid application.  You can also use the SDK inside a 
+server-side [Node.js](http://nodejs.org) JavaScript module. 
+The SDK manages all the persistence and querying of data with 
+the IBM Bluemix Mobile Cloud.
+
+Below is an example of initializing the Mobile Cloud Services SDK.
 ```javascript
-var ibmdata = require('ibmdata')
+var config = {
+  applicationId:"<ApplicationID>",
+  applicationRoute:"<ApplicationRoute>",
+  applicationSecret:"<ApplicationSecret>"
+};
+IBMBluemix.initialize(config);
+var data = IBMData.initializeService();
 ```
 
-### Web or Hybrid
+##Learning More
+To learn more about using the SDK, please consult the following resources:
+- **[Mobile Cloud Services SDK Developer Guide](http://mbaas-gettingstarted.ng.bluemix.net/)**
+- **[Samples and Tutorials](https://www.ng.bluemix.net/docs/#starters/mobile/index.html#samples)**
+- Visit the **[Bluemix Developers Community](https://developer.ibm.com/bluemix/)**
 
-If you want to load the SDK in a Web or Hybrid application, you can reference your bower component with a `<script>` tag. When the SDK is loaded this way, a global namespace called `IBMData` is created.
+Connect with Bluemix: [Twitter](https://twitter.com/ibmbluemix) |
+[YouTube](https://www.youtube.com/playlist?list=PLzpeuWUENMK2d3L5qCITo2GQEt-7r0oqm) |
+[Blog](https://developer.ibm.com/bluemix/blog/) |
+[Facebook](https://www.facebook.com/ibmbluemix) |
+[Meetup](http://www.meetup.com/bluemix/)
 
+*Licensed Materials - Property of IBM
+(C) Copyright IBM Corp. 2013, |CURRENT_YEAR|. All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or
+disclosure restricted by GSA ADP Schedule Contract with IBM Corp.*
 
-```html
-<script src="www/components/ibmdata/js/IBMData.min.js"></script>
-```
-
-### RequireJS
-
-You can also use the SDK within a [RequireJS](http://requirejs.org) app.
-
-```html
-<script src="www/components/requirejs/requirejs.js"></script>
-
-<script>
-    require.config({
-        baseUrl: ".",
-        paths: {
-            ibmdata: 'www/components/ibmdata/IBMData'
-        }
-    });
-</script>
-```
-
-## Initializing
-
-You need to initialize the SDK before you can use it.
-
-### Node.js
-
-```javascript
-// Initilize the main SDK and the supporting service.
-var ibmdata = require('ibmdata');
-var data = ibmdata.initializeService();
-```
-
-### Web or Hybrid app
-
-Initialize with the static approach:
-```javascript
-IBMData.initializeService();
-var listItem = IBMData.Object.ofType("listItem", {name: "Apples", quantity: 10});
-```
-
-Initialize with an asynchronous module definition [(AMD)](http://en.wikipedia.org/wiki/Asynchronous_module_definition) approach:
-
-```javascript
-<script>
-    require(["ibmdata"],
-        function(ibmdata) {
-			ibmdata.initializeService();
-
-			var listItem = ibmdata.Object.ofType("listItem", {name: "Apples", quantity: 10});
-
-        });
-    });
-</script>
-```
-
-Using
----
-You can start using Mobile Data service SDK for IBM Bluemix to persit your data in the Mobile Data service.
-
-```javascript
-// Create a new save a new item
-var item = data.Object.ofType("Item", {name: "Apples", quantity: 10});
-item.save.then(function(savedItem){
-  console.log("Item Saved:"+JSON.stringify(savedItem));
-});
-
-// Retrieve all the items
-var query = data.Query.ofType("Item");
-query.find().done(function(items) {
-    items.forEach(function(item) {
-        //Print out each person
-        console.log("Item:"+JSON.stringify(item))
-    });
-});
-```
-
-Services
---
-
-Each of the services for the JavaScript SDK is in a separate module that you can add to your project individually.
-
-This allows maximum flexibility to the developer to individually pick and choose the services that are key to the application. The JavaScript SDK contains the following services.
-
-- [ibmcloudcode](https://hub.jazz.net/project/mobilec/ibmcloudcode/overview)
-- [ibmdata](https://hub.jazz.net/project/mobilec/ibmdata/overview)
-- [ibmpush](https://hub.jazz.net/project/mobilec/ibmpush/overview)
-
-Each one of these services can be added to your project.
-
-SDK Developer Guide
---
-
-To find out more information about using the SDK, see the
-[Mobile Cloud Services SDK Developer Guide](http://mbaas-gettingstarted.ng.bluemix.net/).
+[Terms of Use](https://hub.jazz.net/project/bluemixmobilesdk/ibmbluemix-android/overview#https://hub.jazz.net/gerrit/plugins/gerritfs/contents/bluemixmobilesdk%252Fibmbluemix-android/refs%252Fheads%252Fmaster/License.txt) |
+[Notices]()

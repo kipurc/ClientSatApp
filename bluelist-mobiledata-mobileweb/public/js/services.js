@@ -211,20 +211,9 @@ angular.module('starter.services', [])
                     // Let the user no they have logged in and can do some stuff if they require
                     console.log("Sucessful initialisation with Application : " + IBMBluemix.config.getApplicationId());
                     // Set the Origin to Local 
-                    IBMBluemix.config.setBaaSURL(window.location.origin);
+                    
                     var cc = IBMCloudCode.initializeService();
-                    // Check if local REMOVE when published
-                    // if (window.location.origin.indexOf('local') > 0) {
-                    //     // Set the Host Name to Default
-                    //     var cc = IBMCloudCode.initializeService();
-                    // } else {
-
-                    //     // Initialize Cloud Code Service with the Host name of the Application;
-                    //     var cc = IBMCloudCode.initializeService();
-                    // }
-
-                    // Let the user no they have logged in and can do some stuff if they require
-                    // console.log("Sucessful initialisation Cloud Code: " + cc.getHostName());
+                    cc.setBaseUrl(window.location.origin);
 
                     // Return the Data
                     defer.resolve();

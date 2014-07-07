@@ -1,6 +1,6 @@
 {
   "name": "bluelist-cordova",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "authors": [
     "Matthew Perrins <matthew_perrins@uk.ibm.com>"
   ],
@@ -12,12 +12,14 @@
   "keywords": [
     "bluemix"
   ],
-  "license": "MIT",
+  "license": "Apache2",
   "homepage": "bluemix.net",
   "dependencies": {
-    "ibmbaas": "https://hub.jazz.net/git/mobilec/ibmbaas/.git",
-    "ibmdata": "https://hub.jazz.net/git/mobilec/ibmdata/.git",
+    "angular": "~1.2.16",
     "angular-touch": "~1.2.16",
-    "angular-sanitize": "~1.2.16"
+    "angular-sanitize": "~1.2.16",
+    "ibmdata": "git+https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-javascript",
+    "ibmbluemix": "git+https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-javascript"
+
   }
 }

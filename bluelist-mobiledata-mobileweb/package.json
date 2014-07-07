@@ -7,10 +7,10 @@
   "dependencies": {
     "request": "~2.34.0",
     "body-parser": "*",
-    "express": "4.*",
+    "express": "4.x",
     "express-namespace": "*",
-    "ibmdata": "1.0.x",
-    "ibmbluemix": "1.0.x"
+    "ibmdata": "latest",
+    "ibmbluemix": "latest"
   },
   "main": "app.js"
 }

@@ -94,7 +94,7 @@ public final class BlueListApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		itemList = new ArrayList<Item>();
-		// Read from properties file
+		// Read from properties file.
 		Properties props = new java.util.Properties();
 		Context context = getApplicationContext();
 		try {
@@ -107,11 +107,11 @@ public final class BlueListApplication extends Application {
 			Log.e(CLASS_NAME,
 					"The bluelist.properties file could not be read properly.", e);
 		}
-		// initialize the IBM core backend-as-a-service
+		// Initialize the IBM core backend-as-a-service.
 		IBMBluemix.initialize(this, props.getProperty(APP_ID), props.getProperty(APP_SECRET), props.getProperty(APP_ROUTE));
-		// initialize the IBM Data Service
+		// Initialize the IBM Data Service.
 		IBMData.initializeService();
-		// register the Item Specialization
+		// Register the Item Specialization.
 		Item.registerSpecialization(Item.class);
 	}
 

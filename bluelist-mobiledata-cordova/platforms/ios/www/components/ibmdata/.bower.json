@@ -9,13 +9,16 @@
     "IBM"
   ],
   "license": "IBM",
-  "_release": "065ac5a3b9",
+  "dependencies": {
+    "ibmbluemix": "https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-javascript/.git"
+  },
+  "_release": "f4574299b8",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "065ac5a3b9f22fcfcb84cdba8a95f6113f17472f"
+    "commit": "f4574299b82fc27b539fb145acef6f174b25b89c"
   },
-  "_source": "https://hub.jazz.net/git/mobilec/ibmdata/.git",
+  "_source": "https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-javascript/.git",
   "_target": "*",
-  "_originalSource": "https://hub.jazz.net/git/mobilec/ibmdata/.git"
+  "_originalSource": "https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-javascript/.git"
 }

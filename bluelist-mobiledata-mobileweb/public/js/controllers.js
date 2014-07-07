@@ -117,7 +117,9 @@ angular.module('starter.controllers', [])
     $scope.updateItem = function(item) {
 
         // Add the Item and then hide the modal view
-        ListService.put(item,item.name).then(null, function(err) {
+        ListService.put(item,item.name).then(function(){
+			$scope.onRefresh();
+		}, function(err) {
             console.log(err);
         });
 
@@ -126,7 +128,7 @@ angular.module('starter.controllers', [])
 
         // Hide the Modal View
         $scope.closeItem();
-
+		
     };
 
     $scope.newItem = function() {
@@ -146,6 +148,7 @@ angular.module('starter.controllers', [])
         $scope.editMode = true;
 
         $scope.itemModal.show();
+		
     };
 
     $scope.closeItem = function() {

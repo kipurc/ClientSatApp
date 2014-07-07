@@ -23,12 +23,10 @@ var express = require('express'),
     ibmdata = require('ibmdata'),
 	bodyparser = require('body-parser');
 
-//change this to the actual Application ID of your Bluemix application
-var appConfig = {
-    applicationId: "<INSERT_APPLICATION_ID_HERE>",
-	applicationSecret: "<INSERT_APPLICATION_SECRET_HERE>",
-    applicationRoute: "<INSERT_APPLICATION_ROUTE_HERE>"
-};
+//extract application data from bluelist.json
+var fs = require('fs');
+var appConfig = JSON.parse(fs.readFileSync('public/bluelist.json', 'utf8'));
+
 
 //initialize the SDK
 ibmbluemix.initialize(appConfig); 
@@ -132,7 +130,7 @@ appContext.put('/item/:id', function(req, res) {
 });
 
 // Delete the Item using a unique id
-app.delete('/item/:id', function(req, res) {
+appContext.delete('/item/:id', function(req, res) {
 	//Get the object with the given id so we can delete it
 	req.data.Object.withId(req.params.id)
 	.then(function(item) {
@@ -153,7 +151,6 @@ app.delete('/item/:id', function(req, res) {
 
 //host static files in public folder
 //endpoint:  https://mobile.mybluemix.net/${appHostName}/v1/apps/${applicationId}/static/
-//app.use(contextRoot+'/static',express.directory('public'));
 appContext.use('/public',express.static('public'));
 
 

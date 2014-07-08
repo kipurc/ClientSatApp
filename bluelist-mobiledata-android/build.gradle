@@ -15,10 +15,16 @@ repositories {
 apply plugin: 'android'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
+	
     compile 'com.ibm.mobile.services:ibmdata:+'
     compile 'com.ibm.mobile.services:ibmbluemix:+'
     compile 'com.ibm.mobile.services:ibmfilesync:+'
+	//add another custom maven dependency here
+	
+	//*or*
+	
+	//add any additional dependencies to your custom project by dropping them into the 'libs' directory
+    compile fileTree(dir: 'libs', include: '*.jar')
 }
 
 android {
@@ -48,4 +54,8 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
 }

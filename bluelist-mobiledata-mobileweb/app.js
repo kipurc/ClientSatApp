@@ -27,6 +27,7 @@ var express = require('express'),
 var fs = require('fs');
 var appConfig = JSON.parse(fs.readFileSync('public/bluelist.json', 'utf8'));
 
+
 //initialize the SDK
 ibmbluemix.initialize(appConfig); 
 var logger = ibmbluemix.getLogger();

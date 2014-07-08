@@ -67,5 +67,5 @@ android {
 // NOTE: This can only be done if 'gradle wrapper' is called prior to distribution.
 // See more info on the gradle wrapper here--> http://www.gradle.org/docs/current/userguide/gradle_wrapper.html
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
+    gradleVersion = '1.10'
 }

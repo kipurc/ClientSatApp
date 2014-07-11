@@ -16,9 +16,9 @@ apply plugin: 'android'
 
 dependencies {
 	
-    compile 'com.ibm.mobile.services:ibmdata:+'
-    compile 'com.ibm.mobile.services:ibmbluemix:+'
-    compile 'com.ibm.mobile.services:ibmfilesync:+'
+    compile 'com.ibm.mobile.services:ibmdata:1.+'
+    compile 'com.ibm.mobile.services:ibmbluemix:1.+'
+    compile 'com.ibm.mobile.services:ibmfilesync:1.+'
 	// Add another custom maven dependency here
 	
 	// *or*

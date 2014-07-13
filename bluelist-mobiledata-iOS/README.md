@@ -31,7 +31,7 @@ dependencies listed in your podfile using the following command:
       pod install
 
 Keep in mind that when using cocoapods, you must use the app's .xcworkspace file, and not
-the .xcodeproj file.
+the .xcodeproj file.  This file will be generated on pod install.
 
 
 Running this iOS sample (bluelist-base-iOS)

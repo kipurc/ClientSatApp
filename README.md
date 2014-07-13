@@ -25,7 +25,7 @@ See the instructions in the bluelist-mobiledata-cordova/README.md file.
 
 Running the iOS sample (bluelist-mobiledata-iOS)
 ---
-See the instructions in [Build an iOS app using the Mobile Data cloud service](http://www.ibm.com/developerworks/library/mo-ios-mobiledata-app/index.html) for more information about how to import this sample into your Xcode development environment and run the sample in a mobile emulator.
+See the instructions in the bluelist-mobiledata-iOS/README.md file.
 
 Running this sample (bluelist-mobiledata-mobileweb)
 ---

@@ -25,7 +25,7 @@ First, install CocoaPods using the following command:
 
       sudo gem install cocoapods
 
-Next, go to the folder containing the bluelist-base-iOS sample.  Then, install the
+Next, go to the folder containing the bluelist-mobiledata-iOS sample.  Then, install the
 dependencies listed in your podfile using the following command:
 
       pod install
@@ -34,7 +34,7 @@ Keep in mind that when using cocoapods, you must use the app's .xcworkspace file
 the .xcodeproj file.  This file will be generated on pod install.
 
 
-Running this iOS sample (bluelist-base-iOS)
+Running this iOS sample (bluelist-mobiledata-iOS)
 ---
 
 You may now open the project's .xcworkspace file (if using cocoapods), and get started!

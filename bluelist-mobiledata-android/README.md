@@ -33,7 +33,7 @@ Alternatively, follow the instructions below:
 Dependency Management
 ---
 
-If you are using Android Studio, simply import the project and the build.gradle file will automatically build your project, pulling in the required dependencies.
+If you are using Android Studio, simply import the project and the 'build.gradle' file will automatically build your project, pulling in the required dependencies.
 
 Otherwise, on [IBM Bluemix](https://www.bluemix.net) click on your newly created app, then click Download SDKs, and click the Android SDK.
 Once downloaded, unzip the SDK, and copy the required jars (ibmbluemix.jar, ibmdata.jar, and ibmfilesync.jar) into the libs folder of your project.
@@ -45,7 +45,9 @@ Last, but not least, navigate to your app's overview page on [IBM Bluemix](https
 
 NOTE: Your App Route will be in the format:
 
-'<YOUR_APP_NAME>.mybluemix.net'
+,,,
+<YOUR_APP_NAME>.mybluemix.net
+,,,
 
 Run Your App
 ---

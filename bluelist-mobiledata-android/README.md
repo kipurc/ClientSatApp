@@ -27,3 +27,29 @@ Running this sample (bluelist-mobiledata-android)
 ---
 
 See the instructions in [Build an Android app using the Mobile Data cloud service](http://www.ibm.com/developerworks/library/mo-android-mobiledata-app/index.html) for more information about how to import this sample into your Android development environment and run the sample in a mobile emulator.
+
+Alternatively, follow the instructions below:
+
+Dependency Management
+---
+
+If you are using Android Studio, simply import the project and the build.gradle file will automatically build your project, pulling in the required dependencies.
+
+Otherwise, on [IBM Bluemix](https://www.bluemix.net) click on your newly created app, then click Download SDKs, and click the Android SDK.
+Once downloaded, unzip the SDK, and copy the required jars (ibmbluemix.jar, ibmdata.jar, and ibmfilesync.jar) into the libs folder of your project.
+
+Properties Configuration
+---
+
+Last, but not least, navigate to your app's overview page on [IBM Bluemix](https://www.bluemix.net) and copy your AppID, App Secret, and App Route into your 'assets\bluelist.properties' file.
+
+NOTE: Your App Route will be in the format:
+
+'<YOUR_APP_NAME>.mybluemix.net'
+
+Run Your App
+---
+
+Now you can run your Android Application in your emulator or on your device.
+
+Notice that your data items have persisted. You now have data on the cloud!

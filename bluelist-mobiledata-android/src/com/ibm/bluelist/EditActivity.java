@@ -95,17 +95,19 @@ public class EditActivity extends Activity {
 		 * onResult is called if the object was successfully saved.
 		 * onError is called if an error occurred saving the object. 
 		 */
-		item.save().continueWith(new Continuation<IBMDataObject, Void>() {
+		item.save().onSuccess(new Continuation<IBMDataObject, Void>() {
 
 			@Override
 			public Void then(Task<IBMDataObject> task) throws Exception {
-				
-				if (task.isFaulted()) {
+				if(task.isCancelled()) {
+                    Log.e(CLASS_NAME, "Exception : " + task.toString() + " was cancelled.");
+                }
+
+				else if (task.isFaulted()) {
 					Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
-					return null;
 				}
 				
-				if (!isFinishing()) {
+				else {
 					runOnUiThread(new Runnable() {
 						public void run() {
 							Intent returnIntent = new Intent();

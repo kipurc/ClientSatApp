@@ -127,19 +127,23 @@ public class MainActivity extends Activity {
 		try {
 			IBMQuery<Item> query = IBMQuery.queryForClass(Item.class);
 			// Query all the Item objects from the server.
-			query.find().continueWith(new Continuation<List<Item>, Void>() {
+			query.find().onSuccess(new Continuation<List<Item>, Void>() {
 
 				@Override
 				public Void then(Task<List<Item>> task) throws Exception {
-					 // Log error message, if the save task fails.
-					if (task.isFaulted()) {
+                    final List<Item> objects = task.getResult();
+                     // Log if the find was cancelled.
+                    if (task.isCancelled()){
+                        Log.e(CLASS_NAME, "Exception : Task " + task.toString() + " was cancelled.");
+                    }
+					 // Log error message, if the find task fails.
+					else if (task.isFaulted()) {
 						Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
-						return null;
 					}
-					final List<Item> objects = task.getResult();
+
 					
 					 // If the result succeeds, load the list.
-					if (!isFinishing()) {
+					else {
 						runOnUiThread(new Runnable() {
 							public void run() {
 							
@@ -192,19 +196,21 @@ public class MainActivity extends Activity {
 		if (!toAdd.equals("")) {
 			item.setName(toAdd);
 			// Use the IBMDataObject to create and persist the Item object.
-			item.save().continueWith(new Continuation<IBMDataObject, Void>() {
+			item.save().onSuccess(new Continuation<IBMDataObject, Void>() {
 
 				@Override
 				public Void then(Task<IBMDataObject> task) throws Exception {
-
+                    // Log if the save was cancelled.
+                    if (task.isCancelled()){
+                        Log.e(CLASS_NAME, "Exception : Task " + task.toString() + " was cancelled.");
+                    }
 					 // Log error message, if the save task fails.
-					if (task.isFaulted()) {
+					else if (task.isFaulted()) {
 						Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
-						return null;
 					}
 
 					 // If the result succeeds, load the list.
-					if (!isFinishing()) {
+					else {
 						listItems();
 					}
 					return null;
@@ -226,19 +232,22 @@ public class MainActivity extends Activity {
 		itemList.remove(listItemPosition);
 		
 		// This will attempt to delete the item on the server.
-		item.delete().continueWith(new Continuation<IBMDataObject, Void>() {
+		item.delete().onSuccess(new Continuation<IBMDataObject, Void>() {
 
 			@Override
 			public Void then(Task<IBMDataObject> task) throws Exception {
+                // Log if the delete was cancelled.
+                if (task.isCancelled()){
+                    Log.e(CLASS_NAME, "Exception : Task " + task.toString() + " was cancelled.");
+                }
 
 				 // Log error message, if the delete task fails.
-				if (task.isFaulted()) {
+				else if (task.isFaulted()) {
 					Log.e(CLASS_NAME, "Exception : " + task.getError().getMessage());
-					return null;
-				}
+					}
 
 				 // If the result succeeds, reload the list.
-				if (!isFinishing()) {
+				else {
 					runOnUiThread(new Runnable() {
 						public void run() {
 							lvArrayAdapter.notifyDataSetChanged();

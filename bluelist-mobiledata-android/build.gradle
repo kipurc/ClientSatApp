@@ -15,7 +15,7 @@ repositories {
 apply plugin: 'android'
 
 dependencies {
-	// Play services jar, uncomment below to utilize google plat services
+	// Play services jar, uncomment below to utilize google play services
 	// compile 'com.google.android.gms:play-services:+'
 	
 	// IBM cloud jars (Uncomment 2 lines below for push etc)
@@ -24,6 +24,8 @@ dependencies {
     compile 'com.ibm.mobile.services:ibmdata:1.+'
     compile 'com.ibm.mobile.services:ibmbluemix:1.+'
     compile 'com.ibm.mobile.services:ibmfilesync:1.+'
+
+
 	// Add another custom maven dependency here
 	
 	// *or*

@@ -95,7 +95,7 @@ public class EditActivity extends Activity {
 		 * onResult is called if the object was successfully saved.
 		 * onError is called if an error occurred saving the object. 
 		 */
-		item.save().onSuccess(new Continuation<IBMDataObject, Void>() {
+		item.save().continueWith(new Continuation<IBMDataObject, Void>() {
 
 			@Override
 			public Void then(Task<IBMDataObject> task) throws Exception {
@@ -108,19 +108,14 @@ public class EditActivity extends Activity {
 				}
 				
 				else {
-					runOnUiThread(new Runnable() {
-						public void run() {
-							Intent returnIntent = new Intent();
-							setResult(BlueListApplication.EDIT_ACTIVITY_RC, returnIntent);
-							finish();
-						}
-					});
+                    Intent returnIntent = new Intent();
+                    setResult(BlueListApplication.EDIT_ACTIVITY_RC, returnIntent);
+                    finish();
 				}
-				
 				return null;
 			}
 			
-		});
+		},Task.UI_THREAD_EXECUTOR);
 
 	}
 }

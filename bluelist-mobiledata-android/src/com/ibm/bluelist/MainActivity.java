@@ -127,7 +127,7 @@ public class MainActivity extends Activity {
 		try {
 			IBMQuery<Item> query = IBMQuery.queryForClass(Item.class);
 			// Query all the Item objects from the server.
-			query.find().onSuccess(new Continuation<List<Item>, Void>() {
+			query.find().continueWith(new Continuation<List<Item>, Void>() {
 
 				@Override
 				public Void then(Task<List<Item>> task) throws Exception {
@@ -144,23 +144,18 @@ public class MainActivity extends Activity {
 					
 					 // If the result succeeds, load the list.
 					else {
-						runOnUiThread(new Runnable() {
-							public void run() {
-							
-								// Clear local itemList.
-								// We'll be reordering and repopulating from DataService.
-								itemList.clear();
-								for(IBMDataObject item:objects) {
-									itemList.add((Item) item);
-								}
-								sortItems(itemList);
-								lvArrayAdapter.notifyDataSetChanged();
-							}
-						});
+                        // Clear local itemList.
+                        // We'll be reordering and repopulating from DataService.
+                        itemList.clear();
+                        for(IBMDataObject item:objects) {
+                            itemList.add((Item) item);
+                        }
+                        sortItems(itemList);
+                        lvArrayAdapter.notifyDataSetChanged();
 					}
 					return null;
 				}
-			});
+			},Task.UI_THREAD_EXECUTOR);
 			
 		}  catch (IBMDataException error) {
 			Log.e(CLASS_NAME, "Exception : " + error.getMessage());
@@ -196,7 +191,7 @@ public class MainActivity extends Activity {
 		if (!toAdd.equals("")) {
 			item.setName(toAdd);
 			// Use the IBMDataObject to create and persist the Item object.
-			item.save().onSuccess(new Continuation<IBMDataObject, Void>() {
+			item.save().continueWith(new Continuation<IBMDataObject, Void>() {
 
 				@Override
 				public Void then(Task<IBMDataObject> task) throws Exception {
@@ -232,7 +227,7 @@ public class MainActivity extends Activity {
 		itemList.remove(listItemPosition);
 		
 		// This will attempt to delete the item on the server.
-		item.delete().onSuccess(new Continuation<IBMDataObject, Void>() {
+		item.delete().continueWith(new Continuation<IBMDataObject, Void>() {
 
 			@Override
 			public Void then(Task<IBMDataObject> task) throws Exception {
@@ -248,15 +243,11 @@ public class MainActivity extends Activity {
 
 				 // If the result succeeds, reload the list.
 				else {
-					runOnUiThread(new Runnable() {
-						public void run() {
-							lvArrayAdapter.notifyDataSetChanged();
-						}
-					});
+                    lvArrayAdapter.notifyDataSetChanged();
 				}
 				return null;
 			}
-		});
+		},Task.UI_THREAD_EXECUTOR);
 		
 		lvArrayAdapter.notifyDataSetChanged();
 	}

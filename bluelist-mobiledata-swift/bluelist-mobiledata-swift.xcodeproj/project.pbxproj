@@ -14,7 +14,6 @@
 		0155F4BE19A6899500AA0CF0 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0155F4BD19A6899500AA0CF0 /* main.storyboard */; };
 		0155F4C019A689AD00AA0CF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0155F4BF19A689AD00AA0CF0 /* Images.xcassets */; };
 		0155F4C319A689BF00AA0CF0 /* bluelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0155F4C119A689BF00AA0CF0 /* bluelist.plist */; };
-		0155F4C419A689BF00AA0CF0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0155F4C219A689BF00AA0CF0 /* Info.plist */; };
 		5FF42BDF1995224C008C51A0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF42BDE1995224C008C51A0 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,7 @@
 		0155F4BD19A6899500AA0CF0 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = SOURCE_ROOT; };
 		0155F4BF19A689AD00AA0CF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BlueList/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		0155F4C119A689BF00AA0CF0 /* bluelist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = bluelist.plist; path = BlueList/bluelist.plist; sourceTree = SOURCE_ROOT; };
-		0155F4C219A689BF00AA0CF0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BlueList/Info.plist; sourceTree = SOURCE_ROOT; };
+		0155F4CB19A68D3800AA0CF0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BlueList/Info.plist; sourceTree = SOURCE_ROOT; };
 		5FF42BB019951D2F008C51A0 /* bluelist-mobiledata-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bluelist-mobiledata-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF42BD219951E56008C51A0 /* bluelist-mobiledata-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "bluelist-mobiledata-swift-Bridging-Header.h"; path = "BlueList/bluelist-mobiledata-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		5FF42BDE1995224C008C51A0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -79,8 +78,8 @@
 		5FF42BB319951D2F008C51A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0155F4CB19A68D3800AA0CF0 /* Info.plist */,
 				0155F4C119A689BF00AA0CF0 /* bluelist.plist */,
-				0155F4C219A689BF00AA0CF0 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			path = "BlueList/Supporting Files";
@@ -143,7 +142,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0155F4C419A689BF00AA0CF0 /* Info.plist in Resources */,
 				0155F4C019A689AD00AA0CF0 /* Images.xcassets in Resources */,
 				0155F4C319A689BF00AA0CF0 /* bluelist.plist in Resources */,
 				0155F4BE19A6899500AA0CF0 /* main.storyboard in Resources */,
@@ -252,7 +250,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "bluelist-mobiledata-swift/Info.plist";
+				INFOPLIST_FILE = BlueList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -267,7 +265,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "bluelist-mobiledata-swift/Info.plist";
+				INFOPLIST_FILE = BlueList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

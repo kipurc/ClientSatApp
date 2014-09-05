@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class IBM_CreateEditItemViewController : UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var itemTextField: UITextField!
@@ -30,7 +29,7 @@ class IBM_CreateEditItemViewController : UIViewController, UITextFieldDelegate {
 
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if(sender as? NSObject !=  self.cancelButton && !self.itemTextField.text.isEmpty){
             self.item?.name = self.itemTextField.text

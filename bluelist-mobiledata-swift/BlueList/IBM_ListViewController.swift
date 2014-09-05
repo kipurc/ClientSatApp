@@ -29,13 +29,13 @@ class IBM_ListViewController : UITableViewController {
     
         // Setting up the refresh control
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Loading Items")
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "Loading Items")
         
-        self.refreshControl.addTarget(self, action: Selector("handleRefreshAction") , forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl!.addTarget(self, action: Selector("handleRefreshAction") , forControlEvents: UIControlEvents.ValueChanged)
     
         // Load initial set of items
-        self.refreshControl.beginRefreshing()
-        self.listItems({self.refreshControl.endRefreshing() })
+        self.refreshControl!.beginRefreshing()
+        self.listItems({self.refreshControl!.endRefreshing() })
     }
     
     override func viewWillAppear(animated:Bool)
@@ -50,7 +50,7 @@ class IBM_ListViewController : UITableViewController {
             // not supported in swift
             // hold off impl.. http://stackoverflow.com/questions/24126261/swift-alternative-to-performselectoronmainthread
             //self.refreshControl.performSelectorOnMainThread(aSelector: "endRefreshing:", withObject: nil!, waitUntilDone: false)
-            self.refreshControl.endRefreshing()
+            self.refreshControl!.endRefreshing()
         })
     }
     
@@ -120,7 +120,7 @@ class IBM_ListViewController : UITableViewController {
     
     func updateItem(item : IBM_Item)
     {
-        self.editedCell!.textLabel.text = item.name
+        self.editedCell!.textLabel!.text = item.name
         
         item.save().continueWithBlock{ task in
             if(task.error() != nil) {
@@ -159,26 +159,26 @@ class IBM_ListViewController : UITableViewController {
         return 1
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.itemList.count
     }
     
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
-    override func tableView (tableView : UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle,  forRowAtIndexPath indexPath: NSIndexPath){
+    override func tableView (tableView : UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle,  forRowAtIndexPath indexPath: NSIndexPath){
         if(editingStyle == UITableViewCellEditingStyle.Delete){
             // Perform delete
             self.deleteItem(self.itemList[indexPath.row])
         }
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath:
-        NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
+        NSIndexPath) -> UITableViewCell {
             let CellIndentifier: String = "ListItemCell"
             var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellIndentifier) as UITableViewCell
-            cell.textLabel.text = self.itemList[indexPath.row].name
+            cell.textLabel!.text = self.itemList[indexPath.row].name
             return cell
     }
     
@@ -199,7 +199,7 @@ class IBM_ListViewController : UITableViewController {
         self.editedCell = UITableViewCell()
     }
     
-    override func prepareForSegue(segue : UIStoryboardSegue,  sender : AnyObject)
+    override func prepareForSegue(segue : UIStoryboardSegue,  sender : AnyObject!)
     {
         var navigationController = segue.destinationViewController as UINavigationController
         var createEditController = navigationController.viewControllers.last as  IBM_CreateEditItemViewController 
@@ -208,8 +208,8 @@ class IBM_ListViewController : UITableViewController {
         }else{
             // is edit so seed the item with the title
             self.editedCell = sender as? UITableViewCell
-            var indexPath = self.tableView.indexPathForCell(self.editedCell)
-            createEditController.item = self.itemList[indexPath.row]
+            var indexPath = self.tableView!.indexPathForCell(self.editedCell!)
+            createEditController.item = self.itemList[indexPath!.row]
         }
     }
     

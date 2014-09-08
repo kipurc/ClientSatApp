@@ -144,6 +144,9 @@ angular.module('starter.services', [])
             var data = {
                 name: data
             };
+			
+			// add the Item to the Cache    
+            var index = cache.get('items').push(data);
 
             // Save the Item to the Cloud 
             cc.put(uri, data, options).then(function(saved) {

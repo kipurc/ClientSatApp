@@ -101,7 +101,7 @@ angular.module('starter.controllers', [])
     $scope.createItem = function(item) {
 
         // Add the Item and then hide the modal view
-        ListService.add(item.name).then(null, function(err) {
+        ListService.add(item.name).catch(function(err) {
 
             console.log(err);
         });
@@ -163,7 +163,7 @@ angular.module('starter.controllers', [])
     $scope.onItemDelete = function(item) {
 
         // Delete the Item
-        ListService.del(item).then(null, function(err) {
+        ListService.del(item).catch(function(err) {
             console.log(err);
         });
 

@@ -126,7 +126,7 @@ angular.module('starter.services', [])
             return defer.promise;
 
         },
-        put: function(item,data) {
+        put: function(item) {
 
             // Create a deferred
             var defer = $q.defer();
@@ -142,13 +142,10 @@ angular.module('starter.services', [])
 
             // Create Payload
             var data = {
-                name: data
+                name: item.name
             };
 			
-			// add the Item to the Cache    
-            var index = cache.get('items').push(data);
-
-            // Save the Item to the Cloud 
+			// Save the Item to the Cloud 
             cc.put(uri, data, options).then(function(saved) {
 
                 defer.resolve(saved);

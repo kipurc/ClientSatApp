@@ -117,7 +117,7 @@ angular.module('starter.controllers', [])
     $scope.updateItem = function(item) {
 
         // Add the Item and then hide the modal view
-        ListService.put(item,item.name).then(function(){
+        ListService.put(item).then(function(){
 			$scope.onRefresh();
 		}, function(err) {
             console.log(err);

@@ -47,6 +47,6 @@ Running this iOS sample (bluelist-mobiledata-swift)
 
 You may now open the project's .xcworkspace file (if using cocoapods), and get started!
 
-For a technical overview of the differences between this Swift sample and the original Objective-C version, consult [Bluelist: The Swift Way](LINK PENDING). And if you haven't already, be sure to read the instructions in [Build an iOS app using the Mobile Data cloud service](http://www.ibm.com/developerworks/library/mo-ios-mobiledata-app/index.html) for more information about how to import samples into your Xcode development environment and run the samples in a mobile simulator.
+For a technical overview of the differences between this Swift sample and the original Objective-C version, consult [Bluelist: The Swift Way](https://www.ibm.com/developerworks/library/mo-bluemix-swift-app/index.html). And if you haven't already, be sure to read the instructions in [Build an iOS app using the Mobile Data cloud service](http://www.ibm.com/developerworks/library/mo-ios-mobiledata-app/index.html) for more information about how to import samples into your Xcode development environment and run the samples in a mobile simulator.
 
 Note: If you've installed dependencies using cocoapods, you may skip steps: 1.7-1.9

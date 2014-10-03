@@ -90,7 +90,7 @@ angular.module('starter.services', [])
 
             // Append the Item Id from the meta data, this is a raw data object retrieve from REST so need 
             // to go inside its _meta object to get the objectId
-            uri = uri.slash().append("item").toString()
+            uri = uri.append("item").toString()
 
             // Create Payload
             var data = {
@@ -138,7 +138,7 @@ angular.module('starter.services', [])
             var uri = new IBMUriBuilder();
             // Append the Item Id from the meta data, this is a raw data object retrieve from REST so need 
             // to go inside its _meta object to get the objectId
-            uri = uri.slash().append("item").slash().append(item._meta.objectId).toString()
+            uri = uri.append("item").append(item._meta.objectId).toString()
 
             // Create Payload
             var data = {
@@ -175,7 +175,7 @@ angular.module('starter.services', [])
             var uri = new IBMUriBuilder();
             // Append the Item Id from the meta data, this is a raw data object retrieve from REST so need 
             // to go inside its _meta object to get the objectId
-            uri = uri.slash().append("item").slash().append(item._meta.objectId).toString()
+            uri = uri.append("item").append(item._meta.objectId).toString()
 
             // Call the DELETE REST endpoint
             cc.del(uri).then(function(status) {

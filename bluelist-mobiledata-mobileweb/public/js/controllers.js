@@ -19,9 +19,6 @@ angular.module('starter.controllers', [])
 // A simple controller that fetches a list of data from a service
 .controller('ListIndexCtrl', function($rootScope, $scope, $location, $ionicLoading, $ionicModal, ListService, InitBaaS) {
 
-    // Form Model
-    $scope.item = {};
-
     $scope.loadItems = function() {
 
         // Clear the List before adding new items
@@ -66,18 +63,6 @@ angular.module('starter.controllers', [])
 
     }
 
-    // Initialize Mobile Cloud SDK and wait for it to configure itself
-    // Once complete keep a reference to it so we can talk to it later
-    if (!$rootScope.IBMBluemix) {
-        InitBaaS.init().then(function() {
-            $rootScope.IBMBluemix = IBMBluemix;
-            $scope.loadItems();
-        });
-    } else {
-        // load a refresh from the cloud
-        $scope.list = ListService.allCache();
-    }
-
     $scope.select = function(item) {
         // Shows/hides the delete button on hover
 
@@ -88,15 +73,6 @@ angular.module('starter.controllers', [])
         // Go back to the Cloud and load a new set of Objects as a hard refresh has been done
         $scope.loadItems();
     }
-
-    // Create our modal
-    $ionicModal.fromTemplateUrl('templates/list-add.html', function(modal) {
-        $scope.itemModal = modal;
-    }, {
-        scope: $scope,
-        animation: 'slide-in-up',
-        focusFirstInput: true
-    });
 
     $scope.createItem = function(item) {
 
@@ -137,7 +113,6 @@ angular.module('starter.controllers', [])
 
         $scope.editMode = false;
 
-        //      $(".view").hide();
         $scope.itemModal.show();
     };
 
@@ -170,6 +145,30 @@ angular.module('starter.controllers', [])
         $scope.list = ListService.allCache();
 
     };
+	
+	// Form Model
+    $scope.item = {};
+	
+	// Initialize Mobile Cloud SDK and wait for it to configure itself
+    // Once complete keep a reference to it so we can talk to it later
+    if (!$rootScope.IBMBluemix) {
+        InitBaaS.init().then(function() {
+            $rootScope.IBMBluemix = IBMBluemix;
+            $scope.loadItems();
+        });
+    } else {
+        // load a refresh from the cloud
+        $scope.list = ListService.allCache();
+    }
+	
+    // Create our modal
+    $ionicModal.fromTemplateUrl('templates/list-add.html', function(modal) {
+        $scope.itemModal = modal;
+    }, {
+        scope: $scope,
+        animation: 'slide-in-up',
+        focusFirstInput: true
+    });
 
 })
 

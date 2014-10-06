@@ -17,24 +17,11 @@
 		FAD04BE31862058500DE0A19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD04BE21862058500DE0A19 /* main.m */; };
 		FAD04BE71862058500DE0A19 /* IBM_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD04BE61862058500DE0A19 /* IBM_AppDelegate.m */; };
 		FAD04BE91862058500DE0A19 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD04BE81862058500DE0A19 /* Images.xcassets */; };
-		FAD04BF01862058500DE0A19 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BEF1862058500DE0A19 /* XCTest.framework */; };
-		FAD04BF11862058500DE0A19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BD61862058500DE0A19 /* Foundation.framework */; };
-		FAD04BF21862058500DE0A19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BDA1862058500DE0A19 /* UIKit.framework */; };
 		FAD04C061862250000DE0A19 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD04C051862250000DE0A19 /* main.storyboard */; };
 		FAD04C0A186233D000DE0A19 /* IBM_ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD04C09186233D000DE0A19 /* IBM_ListViewController.m */; };
 		FAD04C0D1862340500DE0A19 /* IBM_CreateEditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD04C0C1862340500DE0A19 /* IBM_CreateEditItemViewController.m */; };
 		FAFF9DE318F01A3C007EBD9E /* bluelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFF9DE218F01A3C007EBD9E /* bluelist.plist */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FAD04BF31862058500DE0A19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAD04BCB1862058500DE0A19 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAD04BD21862058500DE0A19;
-			remoteInfo = BlueList;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9708241819707B3E00DAC2C4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -52,7 +39,6 @@
 		FAD04BE51862058500DE0A19 /* IBM_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBM_AppDelegate.h; sourceTree = "<group>"; };
 		FAD04BE61862058500DE0A19 /* IBM_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBM_AppDelegate.m; sourceTree = "<group>"; };
 		FAD04BE81862058500DE0A19 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FAD04BEE1862058500DE0A19 /* BlueListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlueListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD04BEF1862058500DE0A19 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FAD04C051862250000DE0A19 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = main.storyboard; path = ../main.storyboard; sourceTree = "<group>"; };
 		FAD04C08186233D000DE0A19 /* IBM_ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBM_ListViewController.h; sourceTree = "<group>"; };
@@ -72,16 +58,6 @@
 				FAD04BD91862058500DE0A19 /* CoreGraphics.framework in Frameworks */,
 				FAD04BDB1862058500DE0A19 /* UIKit.framework in Frameworks */,
 				FAD04BD71862058500DE0A19 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAD04BEB1862058500DE0A19 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAD04BF01862058500DE0A19 /* XCTest.framework in Frameworks */,
-				FAD04BF21862058500DE0A19 /* UIKit.framework in Frameworks */,
-				FAD04BF11862058500DE0A19 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				FAD04BD31862058500DE0A19 /* BlueList.app */,
-				FAD04BEE1862058500DE0A19 /* BlueListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,24 +168,6 @@
 			productReference = FAD04BD31862058500DE0A19 /* BlueList.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FAD04BED1862058500DE0A19 /* BlueListTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FAD04C021862058500DE0A19 /* Build configuration list for PBXNativeTarget "BlueListTests" */;
-			buildPhases = (
-				FAD04BEA1862058500DE0A19 /* Sources */,
-				FAD04BEB1862058500DE0A19 /* Frameworks */,
-				FAD04BEC1862058500DE0A19 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FAD04BF41862058500DE0A19 /* PBXTargetDependency */,
-			);
-			name = BlueListTests;
-			productName = BlueListTests;
-			productReference = FAD04BEE1862058500DE0A19 /* BlueListTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,11 +177,6 @@
 				CLASSPREFIX = IBM_BL;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "International Business Machines";
-				TargetAttributes = {
-					FAD04BED1862058500DE0A19 = {
-						TestTargetID = FAD04BD21862058500DE0A19;
-					};
-				};
 			};
 			buildConfigurationList = FAD04BCE1862058500DE0A19 /* Build configuration list for PBXProject "BlueList" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -239,7 +191,6 @@
 			projectRoot = "";
 			targets = (
 				FAD04BD21862058500DE0A19 /* BlueList */,
-				FAD04BED1862058500DE0A19 /* BlueListTests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,13 +204,6 @@
 				FAFF9DE318F01A3C007EBD9E /* bluelist.plist in Resources */,
 				FAD04C061862250000DE0A19 /* main.storyboard in Resources */,
 				FAD04BE91862058500DE0A19 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAD04BEC1862058500DE0A19 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,22 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAD04BEA1862058500DE0A19 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FAD04BF41862058500DE0A19 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FAD04BD21862058500DE0A19 /* BlueList */;
-			targetProxy = FAD04BF31862058500DE0A19 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FAD04BDF1862058500DE0A19 /* InfoPlist.strings */ = {
@@ -427,46 +356,6 @@
 			};
 			name = Release;
 		};
-		FAD04C031862058500DE0A19 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlueList.app/BlueList";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BlueList/BlueList-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BlueListTests/BlueListTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		FAD04C041862058500DE0A19 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BlueList.app/BlueList";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BlueList/BlueList-Prefix.pch";
-				INFOPLIST_FILE = "BlueListTests/BlueListTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -484,15 +373,6 @@
 			buildConfigurations = (
 				FAD04C001862058500DE0A19 /* Debug */,
 				FAD04C011862058500DE0A19 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FAD04C021862058500DE0A19 /* Build configuration list for PBXNativeTarget "BlueListTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FAD04C031862058500DE0A19 /* Debug */,
-				FAD04C041862058500DE0A19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

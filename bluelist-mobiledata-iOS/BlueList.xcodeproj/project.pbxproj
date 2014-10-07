@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50AC7AF0D5E39493E53CD450 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27505BFE684A29F1AC1354C3 /* libPods.a */; };
+		71038C1819E495AE00419080 /* BlueList_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71038C1719E495AE00419080 /* BlueList_Tests.m */; };
 		9708241919707B3E00DAC2C4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9708241819707B3E00DAC2C4 /* libsqlite3.dylib */; };
 		9708241B19707B5300DAC2C4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9708241A19707B5300DAC2C4 /* libsqlite3.0.dylib */; };
 		FA39EA2518633FB400FB525E /* IBM_Item.m in Sources */ = {isa = PBXBuildFile; fileRef = FA39EA2418633FB400FB525E /* IBM_Item.m */; };
@@ -23,9 +25,25 @@
 		FAFF9DE318F01A3C007EBD9E /* bluelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAFF9DE218F01A3C007EBD9E /* bluelist.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		71038C1919E495AE00419080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD04BCB1862058500DE0A19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAD04BD21862058500DE0A19;
+			remoteInfo = BlueList;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		27505BFE684A29F1AC1354C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		71038C1319E495AE00419080 /* BlueList Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BlueList Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71038C1619E495AE00419080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71038C1719E495AE00419080 /* BlueList_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueList_Tests.m; sourceTree = "<group>"; };
 		9708241819707B3E00DAC2C4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9708241A19707B5300DAC2C4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		D7EFDEF6C4AFB1100C082FE0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EE4EB3E6D6A2C5C472E70B78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FA39EA2318633FB400FB525E /* IBM_Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBM_Item.h; sourceTree = "<group>"; };
 		FA39EA2418633FB400FB525E /* IBM_Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBM_Item.m; sourceTree = "<group>"; };
 		FAD04BD31862058500DE0A19 /* BlueList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +67,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		71038C1019E495AE00419080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAD04BD01862058500DE0A19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,12 +83,39 @@
 				FAD04BD91862058500DE0A19 /* CoreGraphics.framework in Frameworks */,
 				FAD04BDB1862058500DE0A19 /* UIKit.framework in Frameworks */,
 				FAD04BD71862058500DE0A19 /* Foundation.framework in Frameworks */,
+				50AC7AF0D5E39493E53CD450 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BC1680C31F19F9AF11534FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7EFDEF6C4AFB1100C082FE0 /* Pods.debug.xcconfig */,
+				EE4EB3E6D6A2C5C472E70B78 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		71038C1419E495AE00419080 /* BlueList Tests */ = {
+			isa = PBXGroup;
+			children = (
+				71038C1719E495AE00419080 /* BlueList_Tests.m */,
+				71038C1519E495AE00419080 /* Supporting Files */,
+			);
+			path = "BlueList Tests";
+			sourceTree = "<group>";
+		};
+		71038C1519E495AE00419080 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71038C1619E495AE00419080 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		97A825B5194F4AF900B637A2 /* delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				FAD04BDC1862058500DE0A19 /* BlueList */,
+				71038C1419E495AE00419080 /* BlueList Tests */,
 				FAD04BD51862058500DE0A19 /* Frameworks */,
 				FAD04BD41862058500DE0A19 /* Products */,
+				4BC1680C31F19F9AF11534FB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD04BD31862058500DE0A19 /* BlueList.app */,
+				71038C1319E495AE00419080 /* BlueList Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +163,7 @@
 				FAD04BD81862058500DE0A19 /* CoreGraphics.framework */,
 				FAD04BDA1862058500DE0A19 /* UIKit.framework */,
 				FAD04BEF1862058500DE0A19 /* XCTest.framework */,
+				27505BFE684A29F1AC1354C3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,13 +207,33 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		71038C1219E495AE00419080 /* BlueList Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71038C1D19E495AE00419080 /* Build configuration list for PBXNativeTarget "BlueList Tests" */;
+			buildPhases = (
+				71038C0F19E495AE00419080 /* Sources */,
+				71038C1019E495AE00419080 /* Frameworks */,
+				71038C1119E495AE00419080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71038C1A19E495AE00419080 /* PBXTargetDependency */,
+			);
+			name = "BlueList Tests";
+			productName = "BlueList Tests";
+			productReference = 71038C1319E495AE00419080 /* BlueList Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FAD04BD21862058500DE0A19 /* BlueList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAD04BFF1862058500DE0A19 /* Build configuration list for PBXNativeTarget "BlueList" */;
 			buildPhases = (
+				020A058DC3BE9B7CA839B6D2 /* Check Pods Manifest.lock */,
 				FAD04BCF1862058500DE0A19 /* Sources */,
 				FAD04BD01862058500DE0A19 /* Frameworks */,
 				FAD04BD11862058500DE0A19 /* Resources */,
+				AB2EE194B61D2ED55806AFEB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,6 +253,12 @@
 				CLASSPREFIX = IBM_BL;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "International Business Machines";
+				TargetAttributes = {
+					71038C1219E495AE00419080 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = FAD04BD21862058500DE0A19;
+					};
+				};
 			};
 			buildConfigurationList = FAD04BCE1862058500DE0A19 /* Build configuration list for PBXProject "BlueList" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -191,11 +273,19 @@
 			projectRoot = "";
 			targets = (
 				FAD04BD21862058500DE0A19 /* BlueList */,
+				71038C1219E495AE00419080 /* BlueList Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		71038C1119E495AE00419080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAD04BD11862058500DE0A19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,7 +299,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		020A058DC3BE9B7CA839B6D2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AB2EE194B61D2ED55806AFEB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		71038C0F19E495AE00419080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71038C1819E495AE00419080 /* BlueList_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAD04BCF1862058500DE0A19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +355,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		71038C1A19E495AE00419080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAD04BD21862058500DE0A19 /* BlueList */;
+			targetProxy = 71038C1919E495AE00419080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		FAD04BDF1862058500DE0A19 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -236,6 +375,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		71038C1B19E495AE00419080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BlueList Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlueList.app/BlueList";
+			};
+			name = Debug;
+		};
+		71038C1C19E495AE00419080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "BlueList Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlueList.app/BlueList";
+			};
+			name = Release;
+		};
 		FAD04BFD1862058500DE0A19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,6 +499,7 @@
 		};
 		FAD04C001862058500DE0A19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7EFDEF6C4AFB1100C082FE0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -338,6 +520,7 @@
 		};
 		FAD04C011862058500DE0A19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE4EB3E6D6A2C5C472E70B78 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -359,6 +542,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		71038C1D19E495AE00419080 /* Build configuration list for PBXNativeTarget "BlueList Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71038C1B19E495AE00419080 /* Debug */,
+				71038C1C19E495AE00419080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		FAD04BCE1862058500DE0A19 /* Build configuration list for PBXProject "BlueList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

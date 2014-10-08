@@ -30,10 +30,11 @@ See the instructions in [Build an Android app using the Mobile Data cloud servic
 
 Alternatively, follow the instructions below:
 
-Dependency Management
+Dependency Management in Android Studio
 ---
+First you will need to download the Gradle .zip file from [here](http://www.gradle.org/). To install Gradle, simply extract the downloaded zip into the directory of your choice.
 
-If you are using Android Studio, simply import the project and the 'build.gradle' file will automatically build your project, pulling in the required dependencies.
+Android Studio will ask for a GRADLE HOME when importing the sample. Set that path to the directory extracted from the Gradle .zip file where the 'bin' directory lives. The 'build.gradle' file will automatically build your project, pulling in the required dependencies.
 
 Otherwise, if using Eclipse etc, on [IBM Bluemix](https://www.bluemix.net) click on your newly created app, then click Download SDKs, and click the Android SDK.
 Once downloaded, unzip the SDK, and copy the required jars (ibmbluemix.jar, ibmdata.jar, and ibmfilesync.jar) into the 'libs' folder of your project.

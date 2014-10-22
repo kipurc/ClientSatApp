@@ -1,5 +1,6 @@
 Sample: bluelist-mobiledata-swift
 ===
+NOTE: BlueList-Swift has been updated to run in Xcode 6.1
 
 The bluelist-mobiledata-swift sample builds upon the bluelist-base-iOS sample, a simple grocery list application.  In bluelist-mobiledata-swift, the items persist to a mobile backend using the Mobile Data service.
 

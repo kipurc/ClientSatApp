@@ -120,7 +120,7 @@ class IBM_ListViewController : UITableViewController {
     
     func updateItem(item : IBM_Item)
     {
-        self.editedCell!.textLabel!.text = item.name
+        self.editedCell!.textLabel.text = item.name
         
         item.save().continueWithBlock{ task in
             if(task.error() != nil) {
@@ -178,7 +178,7 @@ class IBM_ListViewController : UITableViewController {
         NSIndexPath) -> UITableViewCell {
             let CellIndentifier: String = "ListItemCell"
             var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellIndentifier) as UITableViewCell
-            cell.textLabel!.text = self.itemList[indexPath.row].name
+            cell.textLabel.text = self.itemList[indexPath.row].name
             return cell
     }
     

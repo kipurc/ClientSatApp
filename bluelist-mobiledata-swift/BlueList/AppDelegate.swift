@@ -32,19 +32,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(configurationPath != nil){
             var configuration = NSDictionary(contentsOfFile: configurationPath!)
             
-            applicationId = configuration["applicationId"] as String
+            applicationId = configuration!["applicationId"] as String
             print("applicationId " + applicationId)
             
             if(applicationId == ""){
                 hasValidConfiguration = false
                 errorMessage = "Open the bluelist.plist and set the applicationId to the BlueMix applicationId"
             }
-            applicationSecret = configuration["applicationSecret"] as String
+            applicationSecret = configuration!["applicationSecret"] as String
             if(applicationSecret == ""){
                 hasValidConfiguration = false
                 errorMessage = "Open the bluelist.plist and set the applicationSecret with your BlueMix application's secret"
             }
-            applicationRoute = configuration["applicationRoute"] as String
+            applicationRoute = configuration!["applicationRoute"] as String
             if(applicationRoute == ""){
                 hasValidConfiguration = false
                 errorMessage = "Open the bluelist.plist and set the applicationRoute to the BlueMix application's route"

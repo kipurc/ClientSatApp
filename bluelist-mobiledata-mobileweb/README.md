@@ -62,7 +62,7 @@ node app
 Deploy to Bluemix
 ---
 1. Download and install the Cloud Foundry CLI from https://github.com/cloudfoundry/cli/releases/tag/v6.0.0
-2. From the sample app directory, run ```cf push ${yourAppName}``` to deploy the app to Bluemix.
+2. From the sample app directory, run ```cf push ${yourAppName}``` to deploy the app to Bluemix. (Note: Be sure to run ```npm install --production``` and ```bower install``` prior to your ```cf push```)
 3. The sample app can now be tested using your Bluemix URL
 
 > Notes.  

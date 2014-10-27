@@ -99,3 +99,4 @@ ionc emulate ios
 ```bash
 cordova platform add android
 ```  
+* **WARNING**: Do not add the Bluemix Cordova plugin to this project. Dependencies will conflict. If you'd like to use the Cordova Bluemix plugins check out the Dev Works articles for mobile data [here](http://www.ibm.com/developerworks/mobile/library/mo-bluemix-cordova-plugin/index.html) and push notifications [here](http://www.ibm.com/developerworks/mobile/library/mo-cordova-push-app/index.html).

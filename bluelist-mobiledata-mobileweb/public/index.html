@@ -26,6 +26,17 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+	<script type="text/javascript">
+		// Disable Enter Keystroke in order to prevent ng-repeat Dupes error
+		function stopRKey(evt) {
+			var evt = (evt) ? evt : ((event) ? event : null);
+			var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+			if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+		}
+
+		document.onkeypress = stopRKey;
+
+	</script> 
   </head>
   <body ng-app="starter" animation="slide-left-right-ios7">
     <!-- 

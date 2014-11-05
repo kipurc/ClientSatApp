@@ -77,10 +77,7 @@ angular.module('starter.controllers', [])
     $scope.createItem = function(item) {
 
         // Add the Item and then hide the modal view
-        ListService.add(item.name).catch(function(err) {
-
-            console.log(err);
-        });
+        ListService.add(item.name);
 
         // Clear the Item 
         $scope.list = ListService.allCache();
@@ -138,9 +135,7 @@ angular.module('starter.controllers', [])
     $scope.onItemDelete = function(item) {
 
         // Delete the Item
-        ListService.del(item).catch(function(err) {
-            console.log(err);
-        });
+        ListService.del(item);
 
         $scope.list = ListService.allCache();
 
@@ -155,6 +150,8 @@ angular.module('starter.controllers', [])
         InitBaaS.init().then(function() {
             $rootScope.IBMBluemix = IBMBluemix;
             $scope.loadItems();
+        }, function(err) {
+            console.log(err);
         });
     } else {
         // load a refresh from the cloud

@@ -43,7 +43,7 @@ angular.module('starter.services', [])
             cache.remove('items');
 
             // Gets Some objects from MBaaS for a specific REST Url
-            cc.get('/items', options).done(function(list) {
+            return cc.get('/items', options).then(function(list) {
 
                 // Add a Name Property
                 list.forEach(function(item) {
@@ -60,7 +60,7 @@ angular.module('starter.services', [])
                 cache.put('items', list);
 
                 // return the Cache
-                defer.resolve(cache.get('items'));
+                return $q.when(cache.get('items'));
                 
             }, function(err) {
                 console.log(err);
@@ -99,12 +99,9 @@ angular.module('starter.services', [])
 
             // add the Item to the Cache    
             var index = cache.get('items').push(data);
-
-            // Manage Defer on the Save
-            var defer = $q.defer();
-
+			
             // Save the Item to the Cloud 
-            cc.post(uri, data, options).then(function(saved) {
+            return cc.post(uri, data, options).then(function(saved) {
 
                 // Update the root date for display
                 saved.name = saved.attributes.name;
@@ -116,20 +113,11 @@ angular.module('starter.services', [])
 
                 // Replace the Item 
                 items.forEach(function(item, i) { if (item.name == saved.name) items[i] = saved;});
-                defer.resolve(saved);
-
-            }, function(err) {
-                defer.reject(err);
+				return $q.when(saved);
             });
-
-            // Return a promise for the async operation of save
-            return defer.promise;
-
+			
         },
         put: function(item) {
-
-            // Create a deferred
-            var defer = $q.defer();
 
             // Get a the CC service
             var cc = IBMCloudCode.getService();
@@ -138,7 +126,7 @@ angular.module('starter.services', [])
             var uri = new IBMUriBuilder();
             // Append the Item Id from the meta data, this is a raw data object retrieve from REST so need 
             // to go inside its _meta object to get the objectId
-            uri = uri.append("item").append(item._meta.objectId).toString()
+            uri = uri.append("item").append(item._meta.objectId).toString();
 
             // Create Payload
             var data = {
@@ -146,23 +134,12 @@ angular.module('starter.services', [])
             };
 			
 			// Save the Item to the Cloud 
-            cc.put(uri, data, options).then(function(saved) {
-
-                defer.resolve(saved);
-
-            }, function(err) {
-                defer.reject(err);
-            });
-
-            // Return a promise for the async operation of save
-            return defer.promise;
+            return cc.put(uri, data, options);
 
 
         },
 
         del: function(item) {
-
-            var defer = $q.defer();
 
             // Get a the CC service
             var cc = IBMCloudCode.getService();
@@ -178,14 +155,14 @@ angular.module('starter.services', [])
             uri = uri.append("item").append(item._meta.objectId).toString()
 
             // Call the DELETE REST endpoint
-            cc.del(uri).then(function(status) {
-                defer.resolve(status);
+            return cc.del(uri);//.then(function(status) {
+            /*     defer.resolve(status);
             }, function(err) {
                 defer.reject(err);
-            });
+            }); */
 
             // Remove it
-            return defer.promise;
+            //return defer.promise;
 
         }
     }
@@ -207,7 +184,7 @@ angular.module('starter.services', [])
             $http.get("./bluelist.json").success(function(config) {
 
                 // Initialize the SDK
-                IBMBluemix.initialize(config).done(function() {
+                IBMBluemix.initialize(config).then(function() {
                     // Let the user no they have logged in and can do some stuff if they require
                     console.log("Sucessful initialisation with Application : " + IBMBluemix.config.getApplicationId());
                     // Set the Origin to Local 

@@ -174,7 +174,6 @@ angular.module('starter.controllers', [])
 
     // Display information about the Configuration
     if (typeof IBMBluemix === "object") {
-        $scope.appid = IBMBluemix.getApplicationId();
         $scope.version = IBMBluemix.getVersion();
     }
 

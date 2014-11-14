@@ -3,7 +3,7 @@ Sample: bluelist-mobiledata-mobileweb
 
 The bluelist-mobiledata-mobileweb sample demonstrates how the BlueList app can be hosted and delivered from a Mobile Cloud Code runtime.
 
-This sample works with the Mobile Backend Starter, an application boilerplate that is available on [IBM Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
+This sample works with the Mobile Cloud boilerplate available on [IBM Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
 
 This sample uses the [Ionicframework](https://ionicframework.com) for the mobile web user experience and the  [AngularJS](https://angularjs.org/) as the controller framework. The app is hosted inside a Cloud Code Node.js server and loads into a mobile browser or desktop browser. The app then uses the Cloud Code JavaScript SDK to invoke REST services managed in the same Cloud Code runtime. These REST endpoints are managed with [express](http://expressjs.com/). These REST endpoints then map to a set of CRUD (Create, Read, Update and Delete) operations that are then using the JavaScript Data Service SDK to store and manage data into the Mobile Cloud data services that is backed by [Cloudant](https://cloudant.com/).
 
@@ -20,11 +20,11 @@ The bluelist-mobiledata-mobileweb code is located in the bluelist-mobiledata/blu
 
 Running this sample
 ---
-The sample is designed so that it can be easily run locally and then be pushed up to to Bluemix and tested in the cloud. Use the following steps to setup the sample. To test the app you need to have created a Mobile Cloud Boilerplate application with [IBM Bluemix](http://bluemix.net) and you need to make a note of your app of the hostname and the application id.
+The sample is designed so that it can be easily run locally and then be pushed up to to Bluemix and tested in the cloud. Use the following steps to setup the sample. To test the app you need to have created a Mobile Cloud application on [IBM Bluemix](http://bluemix.net) and you need to make a note of your App ID, App Secret and Route.
 
 ### Configuration
 
-To run the app locally you need to first modify the ```public/bluelist.json``` file with your corresponding application id, application secret, and application route . The application route is the full application URL that you customized when creating your application on Bluemix.
+To run the app locally you need to first modify the ```public/bluelist.json``` file with your corresponding application id, application secret, and application route. The application route is the full application URL that you customized when creating your application on Bluemix.
 
 ```json
 {
@@ -36,7 +36,7 @@ To run the app locally you need to first modify the ```public/bluelist.json``` f
 ```
 
 ### Dependencies
-Modern mobile web applications are now built using dependency managers. The mobile web application sample uses two. It uses ```bower``` for the client side  components and ```npm``` for the server side node.js components. This includes the pulling in of the latest levels of the [Mobile Cloud SDKs](https://hub.jazz.net/user/mobilec) .
+Modern mobile web applications are now built using dependency managers. The mobile web application sample uses two. It uses ```bower``` for the client side components and ```npm``` for the server side node.js components. This includes the pulling in of the latest levels of the [Mobile Cloud SDKs](https://hub.jazz.net/user/mobilec) .
 
 1. Download and install the node.js runtime from http://nodejs.org/
 2. From the sample app directory install the dependant node modules.

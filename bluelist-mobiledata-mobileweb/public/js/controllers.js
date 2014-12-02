@@ -100,7 +100,7 @@ angular.module('starter.controllers', [])
         $scope.list = ListService.allCache();
 
         // Hide the Modal View
-        $scope.closeItem();
+        $scope.closeItem(true);
 		
     };
 
@@ -115,6 +115,8 @@ angular.module('starter.controllers', [])
 
     $scope.editItem = function(item) {
 
+		item.originalName = item.name;
+		
         // Clear the Form
         $scope.item = item;
         $scope.editMode = true;
@@ -123,7 +125,17 @@ angular.module('starter.controllers', [])
 		
     };
 
-    $scope.closeItem = function() {
+    $scope.closeItem = function(onSave) {
+
+        if ($scope.item.originalName != undefined)
+        {
+            if (onSave != true)
+            {
+                $scope.item.name = $scope.item.originalName;
+				$scope.onRefresh();
+            }
+            delete $scope.item.originalName;
+        }
         // Reverse the Paint Bug
         $scope.itemModal.hide();
 

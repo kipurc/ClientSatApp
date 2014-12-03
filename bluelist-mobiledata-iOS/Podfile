@@ -1,5 +1,5 @@
 platform :ios, '7.1'
-pod 'IBMBluemix', '~> 1.0'
-pod 'IBMData', '~> 1.0'
-pod 'IBMFileSync', '~> 1.0'
+pod 'IBMBluemix', '~> 1.0.0-RC1'
+pod 'IBMData', '~> 1.0.0-RC1'
+pod 'IBMFileSync', '~> 1.0.0-RC1'
 workspace 'BlueList'

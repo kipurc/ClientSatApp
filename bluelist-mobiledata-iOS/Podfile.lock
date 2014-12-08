@@ -1,19 +1,38 @@
 PODS:
-  - IBMBluemix (1.0.0.20140707-1250)
-  - IBMData (1.0.0.20140707-1250):
+  - IBMBluemix (1.0.1.20141124-1240)
+  - IBMData (1.0.1.20141124-1240):
     - IBMBluemix (~> 1.0.0)
     - IBMFileSync (~> 1.0.0)
-  - IBMFileSync (1.0.0.20140707-1250):
+  - IBMFileSync (1.0.1.20141124-1240):
     - IBMBluemix (~> 1.0.0)
 
 DEPENDENCIES:
-  - IBMBluemix (~> 1.0)
-  - IBMData (~> 1.0)
-  - IBMFileSync (~> 1.0)
+  - IBMBluemix (from `https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-ios.git`)
+  - IBMData (from `https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-ios.git`)
+  - IBMFileSync (from `https://hub.jazz.net/git/bluemixmobilesdk/ibmfilesync-ios.git`)
+
+EXTERNAL SOURCES:
+  IBMBluemix:
+    :git: https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-ios.git
+  IBMData:
+    :git: https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-ios.git
+  IBMFileSync:
+    :git: https://hub.jazz.net/git/bluemixmobilesdk/ibmfilesync-ios.git
+
+CHECKOUT OPTIONS:
+  IBMBluemix:
+    :commit: 9e14a0412f024070fc1fbe624e84bbd6f0303852
+    :git: https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-ios.git
+  IBMData:
+    :commit: 966474e21b0e06e5b370fc9c1e9a91f5a4ec1640
+    :git: https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-ios.git
+  IBMFileSync:
+    :commit: 89b98066b5a76ec7a2fa6bec19fa61456d0ac492
+    :git: https://hub.jazz.net/git/bluemixmobilesdk/ibmfilesync-ios.git
 
 SPEC CHECKSUMS:
-  IBMBluemix: 1ba152c01eda1f27d4208a1969763689699ee111
-  IBMData: 05e82de03dab5f44fd4ebaf1052184222abb3087
-  IBMFileSync: 8a3f183d7b2c1784a505b920539a0d6d97005e36
+  IBMBluemix: b48acc56a35e151c17c62e38390b33cbb6b4b3f4
+  IBMData: 5bee11075734e142a3c154595ce1f974e9f95a6e
+  IBMFileSync: 2d286aab255ba74bc171fedc2140f97fc54dd435
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.35.0

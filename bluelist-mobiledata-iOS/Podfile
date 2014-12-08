@@ -1,5 +1,5 @@
 platform :ios, '7.1'
-pod 'IBMBluemix', '~> 1.0.0-RC1'
-pod 'IBMData', '~> 1.0.0-RC1'
-pod 'IBMFileSync', '~> 1.0.0-RC1'
+pod 'IBMBluemix', :git => 'https://hub.jazz.net/git/bluemixmobilesdk/ibmbluemix-ios.git'
+pod 'IBMData', :git => 'https://hub.jazz.net/git/bluemixmobilesdk/ibmdata-ios.git'
+pod 'IBMFileSync', :git => 'https://hub.jazz.net/git/bluemixmobilesdk/ibmfilesync-ios.git'
 workspace 'BlueList'

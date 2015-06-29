@@ -1,38 +1,31 @@
-Sample: bluelist-mobiledata
+Client Sat Application
 ===
+The Client Satisfaction Tracher is designed to assis E&MM sellers and management to track progress on their client satisfaction issues. It's a native iOS application and the back-end functionality is hosted on BlueMix.
 
-The bluelist-mobiledata samples build upon the bluelist-base samples, a simple grocery list application.  In bluelist-mobiledata, the items persist to a mobile backend, using the Mobile Data service.
-
-These samples work with the Mobile Cloud, an application boilerplate that is available on [IBM Bluemix](https://www.ng.bluemix.net).  With this boilerplate, you can quickly incorporate pre-built, managed, and scalable cloud services into your mobile applications without relying on IT involvement. You can focus on building your mobile applications rather than the complexities of managing the back end infrastructure.
-
-
-Downloading the samples
+Creating the Mobile Cloud boilerplate application
 ---
-You can clone the samples from IBM DevOps Services with the following command:
+1. Login to [IBM Bluemix](https://www.bluemix.net)
+2. Click 'Catalog' or 'Create An App'
+3. Under Boilerplates, select Mobile Cloud.
+4. Enter in App Info & select 'Create'
+5. You now have a mobile cloud backend, providing you with some mobile services on the cloud!
 
-    git clone https://hub.jazz.net/git/mobilecloud/bluelist-mobiledata
-
-
-Running the Android sample (bluelist-mobiledata-android)
+Downloading the Dependencies
 ---
 
-See the instructions in [Build an Android app using the Mobile Data cloud service](http://www.ibm.com/developerworks/library/mo-android-mobiledata-app/index.html) for more information about how to import this sample into your Android development environment and run the sample in a mobile emulator.
+You can now download the dependencies for this sample using cocoapods!
+This will enable you to skip the SDK download instructions in the article below.
 
-Running this sample (bluelist-mobiledata-cordova)
----
+First, install CocoaPods using the following command:
 
-See the instructions in the bluelist-mobiledata-cordova/README.md file.
+      sudo gem install cocoapods
 
-Running the iOS sample (bluelist-mobiledata-iOS)
----
-See the instructions in the bluelist-mobiledata-iOS/README.md file.
+Next, go to the folder containing clientsat-iOS.  Then, install the
+dependencies listed in your podfile using the following command:
 
-Running this sample (bluelist-mobiledata-mobileweb)
----
+      pod install
 
-See the instructions in the bluelist-mobiledata-mobileweb/README.md file.
+Keep in mind that when using cocoapods, you must use the app's .xcworkspace file, and not
+the .xcodeproj file.  This file will be generated on pod install.
 
-Running this sample (bluelist-mobiledata-web)
----
 
-See the instructions in the bluelist-mobiledata-web/README.md file.

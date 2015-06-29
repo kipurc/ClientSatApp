@@ -1,0 +1,654 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5024A2E71B3BFE5200F34556 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5024A2E51B3BFE5200F34556 /* Fabric.framework */; };
+		5024A2E81B3BFE5200F34556 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5024A2E61B3BFE5200F34556 /* Crashlytics.framework */; };
+		5024A2EC1B3CD8E100F34556 /* IBM_TIMERUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5024A2EB1B3CD8E100F34556 /* IBM_TIMERUIApplication.m */; };
+		502EBA201B18132A00DA5F4E /* IBM_CreateEditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EBA1B1B18132A00DA5F4E /* IBM_CreateEditItemViewController.m */; };
+		502EBA211B18132A00DA5F4E /* IBM_ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EBA1D1B18132A00DA5F4E /* IBM_ListViewController.m */; };
+		502EBA221B18132A00DA5F4E /* IBM_LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EBA1F1B18132A00DA5F4E /* IBM_LoginViewController.m */; };
+		502EBA251B18133F00DA5F4E /* IBM_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EBA241B18133F00DA5F4E /* IBM_AppDelegate.m */; };
+		502EBA2E1B1813F100DA5F4E /* clientsat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 502EBA2C1B1813F100DA5F4E /* clientsat.plist */; };
+		502EBA331B18143D00DA5F4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 502EBA311B18143D00DA5F4E /* InfoPlist.strings */; };
+		502EBA351B18149300DA5F4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EBA341B18149300DA5F4E /* main.m */; };
+		502EBA371B1814BD00DA5F4E /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502EBA361B1814BD00DA5F4E /* main.storyboard */; };
+		502EBA401B18157F00DA5F4E /* IBM_ClientIssueRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EBA3F1B18157F00DA5F4E /* IBM_ClientIssueRecord.m */; };
+		502EBA421B1815BC00DA5F4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 502EBA411B1815BC00DA5F4E /* Images.xcassets */; };
+		502EBA451B1A8BBE00DA5F4E /* IBM_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EBA441B1A8BBE00DA5F4E /* IBM_DetailViewController.m */; };
+		50576C621B37847D00C4A58A /* bluemix_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 50576C611B37847D00C4A58A /* bluemix_logo.png */; };
+		50576C661B37854C00C4A58A /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50576C651B37854C00C4A58A /* Launch Screen.xib */; };
+		50576C691B37941700C4A58A /* IBM_ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50576C681B37941700C4A58A /* IBM_ProfileViewController.m */; };
+		50AC7AF0D5E39493E53CD450 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27505BFE684A29F1AC1354C3 /* libPods.a */; };
+		50D427191B392AB1008E04EB /* IBM_AdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D427181B392AB1008E04EB /* IBM_AdminViewController.m */; };
+		50F4329A1B2FE844003D75F8 /* ClientSatAppBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F432991B2FE844003D75F8 /* ClientSatAppBackground.png */; };
+		50F4329C1B2FFB41003D75F8 /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F4329B1B2FFB41003D75F8 /* LoginButton.png */; };
+		50F432A01B312070003D75F8 /* IBM_User.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4329F1B312070003D75F8 /* IBM_User.m */; };
+		9708241919707B3E00DAC2C4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9708241819707B3E00DAC2C4 /* libsqlite3.dylib */; };
+		9708241B19707B5300DAC2C4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9708241A19707B5300DAC2C4 /* libsqlite3.0.dylib */; };
+		FAD04BD71862058500DE0A19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BD61862058500DE0A19 /* Foundation.framework */; };
+		FAD04BD91862058500DE0A19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BD81862058500DE0A19 /* CoreGraphics.framework */; };
+		FAD04BDB1862058500DE0A19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD04BDA1862058500DE0A19 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71038C1919E495AE00419080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD04BCB1862058500DE0A19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAD04BD21862058500DE0A19;
+			remoteInfo = BlueList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27505BFE684A29F1AC1354C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5024A2E51B3BFE5200F34556 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		5024A2E61B3BFE5200F34556 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		5024A2EA1B3CD89C00F34556 /* IBM_TIMERUIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBM_TIMERUIApplication.h; path = ClientSat/IBM_TIMERUIApplication.h; sourceTree = SOURCE_ROOT; };
+		5024A2EB1B3CD8E100F34556 /* IBM_TIMERUIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_TIMERUIApplication.m; path = ClientSat/IBM_TIMERUIApplication.m; sourceTree = SOURCE_ROOT; };
+		502EBA1A1B18132A00DA5F4E /* IBM_CreateEditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBM_CreateEditItemViewController.h; path = ClientSat/IBM_CreateEditItemViewController.h; sourceTree = SOURCE_ROOT; };
+		502EBA1B1B18132A00DA5F4E /* IBM_CreateEditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_CreateEditItemViewController.m; path = ClientSat/IBM_CreateEditItemViewController.m; sourceTree = SOURCE_ROOT; };
+		502EBA1C1B18132A00DA5F4E /* IBM_ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBM_ListViewController.h; path = ClientSat/IBM_ListViewController.h; sourceTree = SOURCE_ROOT; };
+		502EBA1D1B18132A00DA5F4E /* IBM_ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_ListViewController.m; path = ClientSat/IBM_ListViewController.m; sourceTree = SOURCE_ROOT; };
+		502EBA1E1B18132A00DA5F4E /* IBM_LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBM_LoginViewController.h; path = ClientSat/IBM_LoginViewController.h; sourceTree = SOURCE_ROOT; };
+		502EBA1F1B18132A00DA5F4E /* IBM_LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_LoginViewController.m; path = ClientSat/IBM_LoginViewController.m; sourceTree = SOURCE_ROOT; };
+		502EBA231B18133F00DA5F4E /* IBM_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBM_AppDelegate.h; path = ClientSat/IBM_AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		502EBA241B18133F00DA5F4E /* IBM_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_AppDelegate.m; path = ClientSat/IBM_AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		502EBA2A1B1813F100DA5F4E /* ClientSat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ClientSat-Info.plist"; path = "ClientSat/ClientSat-Info.plist"; sourceTree = SOURCE_ROOT; };
+		502EBA2B1B1813F100DA5F4E /* ClientSat-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ClientSat-Prefix.pch"; path = "ClientSat/ClientSat-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		502EBA2C1B1813F100DA5F4E /* clientsat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = clientsat.plist; path = ClientSat/clientsat.plist; sourceTree = SOURCE_ROOT; };
+		502EBA321B18143D00DA5F4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ClientSat/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		502EBA341B18149300DA5F4E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ClientSat/main.m; sourceTree = SOURCE_ROOT; };
+		502EBA361B1814BD00DA5F4E /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = main.storyboard; path = ClientSat/main.storyboard; sourceTree = SOURCE_ROOT; };
+		502EBA3E1B18157F00DA5F4E /* IBM_ClientIssueRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBM_ClientIssueRecord.h; path = ClientSat/IBM_ClientIssueRecord.h; sourceTree = SOURCE_ROOT; };
+		502EBA3F1B18157F00DA5F4E /* IBM_ClientIssueRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_ClientIssueRecord.m; path = ClientSat/IBM_ClientIssueRecord.m; sourceTree = SOURCE_ROOT; };
+		502EBA411B1815BC00DA5F4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ClientSat/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		502EBA431B1A8B9900DA5F4E /* IBM_DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IBM_DetailViewController.h; path = ClientSat/IBM_DetailViewController.h; sourceTree = SOURCE_ROOT; };
+		502EBA441B1A8BBE00DA5F4E /* IBM_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_DetailViewController.m; path = ClientSat/IBM_DetailViewController.m; sourceTree = SOURCE_ROOT; };
+		50576C611B37847D00C4A58A /* bluemix_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluemix_logo.png; sourceTree = SOURCE_ROOT; };
+		50576C651B37854C00C4A58A /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "ClientSat/Launch Screen.xib"; sourceTree = SOURCE_ROOT; };
+		50576C671B37941700C4A58A /* IBM_ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBM_ProfileViewController.h; path = ClientSat/IBM_ProfileViewController.h; sourceTree = SOURCE_ROOT; };
+		50576C681B37941700C4A58A /* IBM_ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_ProfileViewController.m; path = ClientSat/IBM_ProfileViewController.m; sourceTree = SOURCE_ROOT; };
+		50D427151B3929F0008E04EB /* IBM_AdminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IBM_AdminViewController.h; path = ClientSat/IBM_AdminViewController.h; sourceTree = SOURCE_ROOT; };
+		50D427181B392AB1008E04EB /* IBM_AdminViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_AdminViewController.m; path = ClientSat/IBM_AdminViewController.m; sourceTree = SOURCE_ROOT; };
+		50F432991B2FE844003D75F8 /* ClientSatAppBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClientSatAppBackground.png; sourceTree = SOURCE_ROOT; };
+		50F4329B1B2FFB41003D75F8 /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = SOURCE_ROOT; };
+		50F4329F1B312070003D75F8 /* IBM_User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IBM_User.m; path = ClientSat/IBM_User.m; sourceTree = SOURCE_ROOT; };
+		50F432A11B312088003D75F8 /* IBM_User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IBM_User.h; path = ClientSat/IBM_User.h; sourceTree = SOURCE_ROOT; };
+		71038C1319E495AE00419080 /* ClientSat Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ClientSat Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9708241819707B3E00DAC2C4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9708241A19707B5300DAC2C4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		D7EFDEF6C4AFB1100C082FE0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EE4EB3E6D6A2C5C472E70B78 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FAD04BD31862058500DE0A19 /* ClientSat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientSat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD04BD61862058500DE0A19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FAD04BD81862058500DE0A19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FAD04BDA1862058500DE0A19 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FAD04BEF1862058500DE0A19 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71038C1019E495AE00419080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD04BD01862058500DE0A19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5024A2E71B3BFE5200F34556 /* Fabric.framework in Frameworks */,
+				9708241B19707B5300DAC2C4 /* libsqlite3.0.dylib in Frameworks */,
+				5024A2E81B3BFE5200F34556 /* Crashlytics.framework in Frameworks */,
+				9708241919707B3E00DAC2C4 /* libsqlite3.dylib in Frameworks */,
+				FAD04BD91862058500DE0A19 /* CoreGraphics.framework in Frameworks */,
+				FAD04BDB1862058500DE0A19 /* UIKit.framework in Frameworks */,
+				FAD04BD71862058500DE0A19 /* Foundation.framework in Frameworks */,
+				50AC7AF0D5E39493E53CD450 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BC1680C31F19F9AF11534FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7EFDEF6C4AFB1100C082FE0 /* Pods.debug.xcconfig */,
+				EE4EB3E6D6A2C5C472E70B78 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5024A2E91B3CD85B00F34556 /* timer */ = {
+			isa = PBXGroup;
+			children = (
+				5024A2EA1B3CD89C00F34556 /* IBM_TIMERUIApplication.h */,
+				5024A2EB1B3CD8E100F34556 /* IBM_TIMERUIApplication.m */,
+			);
+			name = timer;
+			sourceTree = "<group>";
+		};
+		50576C5D1B3783AD00C4A58A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				50576C611B37847D00C4A58A /* bluemix_logo.png */,
+				50F4329B1B2FFB41003D75F8 /* LoginButton.png */,
+				50F432991B2FE844003D75F8 /* ClientSatAppBackground.png */,
+				502EBA411B1815BC00DA5F4E /* Images.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		97A825B5194F4AF900B637A2 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				502EBA231B18133F00DA5F4E /* IBM_AppDelegate.h */,
+				502EBA241B18133F00DA5F4E /* IBM_AppDelegate.m */,
+			);
+			name = delegate;
+			sourceTree = "<group>";
+		};
+		FA39EA2218633F8900FB525E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				50F4329F1B312070003D75F8 /* IBM_User.m */,
+				50F432A11B312088003D75F8 /* IBM_User.h */,
+				502EBA3E1B18157F00DA5F4E /* IBM_ClientIssueRecord.h */,
+				502EBA3F1B18157F00DA5F4E /* IBM_ClientIssueRecord.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		FAD04BCA1862058500DE0A19 = {
+			isa = PBXGroup;
+			children = (
+				FAD04BDC1862058500DE0A19 /* ClientSat */,
+				FAD04BD51862058500DE0A19 /* Frameworks */,
+				FAD04BD41862058500DE0A19 /* Products */,
+				4BC1680C31F19F9AF11534FB /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		FAD04BD41862058500DE0A19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAD04BD31862058500DE0A19 /* ClientSat.app */,
+				71038C1319E495AE00419080 /* ClientSat Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAD04BD51862058500DE0A19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5024A2E51B3BFE5200F34556 /* Fabric.framework */,
+				5024A2E61B3BFE5200F34556 /* Crashlytics.framework */,
+				9708241A19707B5300DAC2C4 /* libsqlite3.0.dylib */,
+				9708241819707B3E00DAC2C4 /* libsqlite3.dylib */,
+				FAD04BD61862058500DE0A19 /* Foundation.framework */,
+				FAD04BD81862058500DE0A19 /* CoreGraphics.framework */,
+				FAD04BDA1862058500DE0A19 /* UIKit.framework */,
+				FAD04BEF1862058500DE0A19 /* XCTest.framework */,
+				27505BFE684A29F1AC1354C3 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAD04BDC1862058500DE0A19 /* ClientSat */ = {
+			isa = PBXGroup;
+			children = (
+				502EBA361B1814BD00DA5F4E /* main.storyboard */,
+				50576C651B37854C00C4A58A /* Launch Screen.xib */,
+				502EBA341B18149300DA5F4E /* main.m */,
+				5024A2E91B3CD85B00F34556 /* timer */,
+				FAD04C071862339F00DE0A19 /* controller */,
+				97A825B5194F4AF900B637A2 /* delegate */,
+				FA39EA2218633F8900FB525E /* model */,
+				50576C5D1B3783AD00C4A58A /* Images */,
+				FAD04BDD1862058500DE0A19 /* Supporting Files */,
+			);
+			name = ClientSat;
+			path = BlueList;
+			sourceTree = "<group>";
+		};
+		FAD04BDD1862058500DE0A19 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				502EBA311B18143D00DA5F4E /* InfoPlist.strings */,
+				502EBA2A1B1813F100DA5F4E /* ClientSat-Info.plist */,
+				502EBA2B1B1813F100DA5F4E /* ClientSat-Prefix.pch */,
+				502EBA2C1B1813F100DA5F4E /* clientsat.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAD04C071862339F00DE0A19 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				502EBA1A1B18132A00DA5F4E /* IBM_CreateEditItemViewController.h */,
+				502EBA1B1B18132A00DA5F4E /* IBM_CreateEditItemViewController.m */,
+				502EBA1C1B18132A00DA5F4E /* IBM_ListViewController.h */,
+				502EBA1D1B18132A00DA5F4E /* IBM_ListViewController.m */,
+				502EBA1E1B18132A00DA5F4E /* IBM_LoginViewController.h */,
+				502EBA1F1B18132A00DA5F4E /* IBM_LoginViewController.m */,
+				502EBA431B1A8B9900DA5F4E /* IBM_DetailViewController.h */,
+				502EBA441B1A8BBE00DA5F4E /* IBM_DetailViewController.m */,
+				50576C671B37941700C4A58A /* IBM_ProfileViewController.h */,
+				50576C681B37941700C4A58A /* IBM_ProfileViewController.m */,
+				50D427151B3929F0008E04EB /* IBM_AdminViewController.h */,
+				50D427181B392AB1008E04EB /* IBM_AdminViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71038C1219E495AE00419080 /* ClientSat Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71038C1D19E495AE00419080 /* Build configuration list for PBXNativeTarget "ClientSat Tests" */;
+			buildPhases = (
+				71038C0F19E495AE00419080 /* Sources */,
+				71038C1019E495AE00419080 /* Frameworks */,
+				71038C1119E495AE00419080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71038C1A19E495AE00419080 /* PBXTargetDependency */,
+			);
+			name = "ClientSat Tests";
+			productName = "BlueList Tests";
+			productReference = 71038C1319E495AE00419080 /* ClientSat Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FAD04BD21862058500DE0A19 /* ClientSat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD04BFF1862058500DE0A19 /* Build configuration list for PBXNativeTarget "ClientSat" */;
+			buildPhases = (
+				020A058DC3BE9B7CA839B6D2 /* Check Pods Manifest.lock */,
+				FAD04BCF1862058500DE0A19 /* Sources */,
+				FAD04BD01862058500DE0A19 /* Frameworks */,
+				FAD04BD11862058500DE0A19 /* Resources */,
+				AB2EE194B61D2ED55806AFEB /* Copy Pods Resources */,
+				5024A2E41B3BFE0300F34556 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClientSat;
+			productName = BlueList;
+			productReference = FAD04BD31862058500DE0A19 /* ClientSat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAD04BCB1862058500DE0A19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IBM_BL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "International Business Machines";
+				TargetAttributes = {
+					71038C1219E495AE00419080 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = FAD04BD21862058500DE0A19;
+					};
+					FAD04BD21862058500DE0A19 = {
+						DevelopmentTeam = PP64RT7P8Z;
+					};
+				};
+			};
+			buildConfigurationList = FAD04BCE1862058500DE0A19 /* Build configuration list for PBXProject "ClientSat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAD04BCA1862058500DE0A19;
+			productRefGroup = FAD04BD41862058500DE0A19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAD04BD21862058500DE0A19 /* ClientSat */,
+				71038C1219E495AE00419080 /* ClientSat Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71038C1119E495AE00419080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD04BD11862058500DE0A19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502EBA371B1814BD00DA5F4E /* main.storyboard in Resources */,
+				50576C621B37847D00C4A58A /* bluemix_logo.png in Resources */,
+				50576C661B37854C00C4A58A /* Launch Screen.xib in Resources */,
+				50F4329C1B2FFB41003D75F8 /* LoginButton.png in Resources */,
+				502EBA2E1B1813F100DA5F4E /* clientsat.plist in Resources */,
+				502EBA421B1815BC00DA5F4E /* Images.xcassets in Resources */,
+				502EBA331B18143D00DA5F4E /* InfoPlist.strings in Resources */,
+				50F4329A1B2FE844003D75F8 /* ClientSatAppBackground.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		020A058DC3BE9B7CA839B6D2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5024A2E41B3BFE0300F34556 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0c860f68e7848aac2e0ad7eb29104dc87dbffe26 5afe7e243d90585dc86ea8190fa999e6a27cc9c67ff1ae1076dd20d430cb2633";
+		};
+		AB2EE194B61D2ED55806AFEB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71038C0F19E495AE00419080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD04BCF1862058500DE0A19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5024A2EC1B3CD8E100F34556 /* IBM_TIMERUIApplication.m in Sources */,
+				502EBA221B18132A00DA5F4E /* IBM_LoginViewController.m in Sources */,
+				502EBA201B18132A00DA5F4E /* IBM_CreateEditItemViewController.m in Sources */,
+				502EBA451B1A8BBE00DA5F4E /* IBM_DetailViewController.m in Sources */,
+				50F432A01B312070003D75F8 /* IBM_User.m in Sources */,
+				502EBA211B18132A00DA5F4E /* IBM_ListViewController.m in Sources */,
+				50D427191B392AB1008E04EB /* IBM_AdminViewController.m in Sources */,
+				50576C691B37941700C4A58A /* IBM_ProfileViewController.m in Sources */,
+				502EBA351B18149300DA5F4E /* main.m in Sources */,
+				502EBA401B18157F00DA5F4E /* IBM_ClientIssueRecord.m in Sources */,
+				502EBA251B18133F00DA5F4E /* IBM_AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71038C1A19E495AE00419080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAD04BD21862058500DE0A19 /* ClientSat */;
+			targetProxy = 71038C1919E495AE00419080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		502EBA311B18143D00DA5F4E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502EBA321B18143D00DA5F4E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		71038C1B19E495AE00419080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "ClientSat Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "ClientSat Tests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClientSat.app/ClientSat";
+			};
+			name = Debug;
+		};
+		71038C1C19E495AE00419080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "ClientSat Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "ClientSat Tests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClientSat.app/ClientSat";
+			};
+			name = Release;
+		};
+		FAD04BFD1862058500DE0A19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FAD04BFE1862058500DE0A19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAD04C001862058500DE0A19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7EFDEF6C4AFB1100C082FE0 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClientSat/ClientSat-Prefix.pch";
+				INFOPLIST_FILE = "ClientSat/ClientSat-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = ClientSat;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FAD04C011862058500DE0A19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE4EB3E6D6A2C5C472E70B78 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClientSat/ClientSat-Prefix.pch";
+				INFOPLIST_FILE = "ClientSat/ClientSat-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = ClientSat;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71038C1D19E495AE00419080 /* Build configuration list for PBXNativeTarget "ClientSat Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71038C1B19E495AE00419080 /* Debug */,
+				71038C1C19E495AE00419080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAD04BCE1862058500DE0A19 /* Build configuration list for PBXProject "ClientSat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD04BFD1862058500DE0A19 /* Debug */,
+				FAD04BFE1862058500DE0A19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAD04BFF1862058500DE0A19 /* Build configuration list for PBXNativeTarget "ClientSat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD04C001862058500DE0A19 /* Debug */,
+				FAD04C011862058500DE0A19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAD04BCB1862058500DE0A19 /* Project object */;
+}

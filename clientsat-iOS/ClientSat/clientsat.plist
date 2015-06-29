@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>applicationId</key>
+	<string>85c27b0c-8fb9-4d15-a98b-619ab2db1fd8</string>
+	<key>applicationSecret</key>
+	<string>0893caadf3d53b8a7c2b414a6b4187309f8ace0c</string>
+	<key>applicationRoute</key>
+	<string>http://ClientSatApp.mybluemix.net</string>
+</dict>
+</plist>
